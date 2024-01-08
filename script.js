@@ -1,14 +1,5 @@
 // script.js
 
-function smoothScroll(target) {
-    const targetElement = document.querySelector(target);
-    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-    });
-}
-
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -20,10 +11,10 @@ function isElementInViewport(el) {
     );
 }
 
-// Existing smoothScroll function
+// Smooth scroll function
 function smoothScroll(target) {
     const targetElement = document.querySelector(target);
-    const targetPosition = target === "#home" ? 0 : targetElement.getBoundingClientRect().top + window.scrollY;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -52,6 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isElementInViewport(element)) {
                 element.classList.add('show');
             }
+        });
+    });
+
+    // Add click event listeners to all navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const target = this.getAttribute('href');
+            smoothScroll(target);
         });
     });
 
