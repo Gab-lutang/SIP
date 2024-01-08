@@ -1,6 +1,5 @@
 // script.js
 
-// Function to check if an element is in the viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -11,7 +10,6 @@ function isElementInViewport(el) {
     );
 }
 
-// Smooth scroll function
 function smoothScroll(target) {
     const targetElement = document.querySelector(target);
     const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
@@ -36,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Add an event listener for scrolling to trigger animations
     document.addEventListener('scroll', function () {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         animatedElements.forEach((element) => {
@@ -46,13 +43,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Add click event listeners to all navigation links
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
             const target = this.getAttribute('href');
-            smoothScroll(target);
+
+            // Adjusted for GitHub Pages subpath
+            const basePath = window.location.pathname;
+            const adjustedTarget = basePath + target;
+
+            smoothScroll(adjustedTarget);
         });
     });
 
