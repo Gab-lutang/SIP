@@ -1,5 +1,4 @@
-// script.js
-
+// Function to check if an element is in the viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -10,13 +9,19 @@ function isElementInViewport(el) {
     );
 }
 
+// Updated smoothScroll function to handle subpaths on GitHub Pages
 function smoothScroll(target) {
-    const targetElement = document.querySelector(target);
-    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-    });
+    const basePath = window.location.pathname;
+    const adjustedTarget = basePath + target;
+    const targetElement = document.querySelector(adjustedTarget);
+
+    if (targetElement) {
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -34,26 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Add an event listener for scrolling to trigger animations
     document.addEventListener('scroll', function () {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         animatedElements.forEach((element) => {
             if (isElementInViewport(element)) {
                 element.classList.add('show');
             }
-        });
-    });
-
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const target = this.getAttribute('href');
-
-            // Adjusted for GitHub Pages subpath
-            const basePath = window.location.pathname;
-            const adjustedTarget = basePath + target;
-
-            smoothScroll(adjustedTarget);
         });
     });
 
