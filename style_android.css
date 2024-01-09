@@ -259,3 +259,30 @@ a:hover {
         padding: 10px;
     }
 }
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    ul {
+        flex-direction: column;
+        position: fixed;
+        top: 70px; /* Adjust based on your header's height */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+    }
+
+    ul.active {
+        max-height: 500px; /* Adjust based on your needs */
+    }
+
+    li {
+        padding: 10px;
+    }
+}
