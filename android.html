@@ -7,6 +7,7 @@
     <title>ANZENAI Project</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style_android.css">
+    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-dfmxsVFfBRfQ3IaJstDPVbZl+M5Us+CEzpy3d/bdaz3Uofxq0d4+0oQpUpdbPl8+XF9wfu8YJFqDx+I+dvHNwA=="
         crossorigin="anonymous" />
@@ -18,10 +19,12 @@
     <!-- Navigation Bar -->
     <nav>
         <img src="ANZENAI_logo.png" alt="ANZENAI Logo">
+        <!-- Use a responsive menu icon for smaller screens -->
         <div class="menu-icon" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
         <ul id="menu">
+            <!-- Use a class for smooth scrolling -->
             <li><a href="#home" class="scroll-link">Home</a></li>
             <li><a href="#about" class="scroll-link">About Us</a></li>
             <li><a href="#features" class="scroll-link">Features</a></li>
@@ -109,6 +112,7 @@
         <h2>Connect with Us on Social Media</h2>
         <div class="social-media-icons">
             <!-- Add your social media icons and links -->
+            <!-- Example social media icon (replace the link and class with your actual icons) -->
             <a href="#" class="fab fa-facebook"></a>
             <a href="#" class="fab fa-twitter"></a>
             <a href="#" class="fab fa-instagram"></a>
@@ -127,13 +131,14 @@
         </form>
     </section>
 
-    <!-- JavaScript for toggleMenu and smooth scrolling -->
     <script>
+        // JavaScript function to toggle the menu
         function toggleMenu() {
             const menu = document.getElementById('menu');
             menu.classList.toggle('active');
         }
 
+        // JavaScript function for smooth scrolling
         document.querySelectorAll('.scroll-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -141,6 +146,10 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                // Close the menu on click for small screens
+                const menu = document.getElementById('menu');
+                menu.classList.remove('active');
             });
         });
     </script>
