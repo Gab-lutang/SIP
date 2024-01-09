@@ -1,5 +1,5 @@
 /* Reset some default styles */
-body, h1, h2, h3, p, ul {
+body, h1, h2, p {
     margin: 0;
     padding: 0;
 }
@@ -7,206 +7,255 @@ body, h1, h2, h3, p, ul {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    color: #333;
 }
 
-/* Navigation Bar Styles */
+/* Navigation Bar styles */
 nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav img {
     max-height: 50px;
 }
 
-nav ul {
-    list-style-type: none;
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin-right: 20px;
+li {
+    margin: 0;
 }
 
-nav a {
+a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Hero Section Styles */
+a:hover {
+    color: #3498db;
+}
+
+/* Hero Section styles */
 #hero {
-    background-color: #f0f0f0;
-    padding: 50px;
+    background-color: #3498db;
+    color: #fff;
     text-align: center;
+    padding: 3em;
+    margin-top: 70px; /* Adjust based on your header's height */
 }
 
 #hero h1 {
-    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-/* About Us Section Styles */
+#hero p {
+    font-size: 1.2em;
+}
+
+/* About Us Section styles */
 #about {
     background-color: #fff;
-    padding: 50px;
-    text-align: center;
+    padding: 3em;
 }
 
 #about h2 {
     color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Features Section Styles */
+/* Features Section styles */
 #features {
-    background-color: #f0f0f0;
-    padding: 50px;
-    text-align: center;
+    background-color: #f5f5f5;
+    padding: 3em;
 }
 
 .feature-card {
     background-color: #fff;
     padding: 20px;
-    margin: 20px;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Download Section Styles */
+.feature-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Download Section styles */
 #download {
-    background-color: #333;
+    background-color: #3498db;
     color: #fff;
-    padding: 50px;
     text-align: center;
-}
-
-#download h2 {
-    color: #fff;
+    padding: 3em;
 }
 
 .download-button {
     display: inline-block;
     background-color: #fff;
-    color: #333;
+    color: #3498db;
     padding: 10px 20px;
-    margin-top: 20px;
-    text-decoration: none;
     border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .download-button:hover {
-    background-color: #ddd;
+    background-color: #333;
+    color: #fff;
 }
 
-/* Testimonials Section Styles */
-#Reviews {
+/* Testimonials Section styles */
+#reviews {
     background-color: #fff;
-    padding: 50px;
-    text-align: center;
+    padding: 3em;
 }
 
 .reviews {
-    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .reviews img {
     border-radius: 50%;
     max-width: 100px;
+    margin-bottom: 10px;
 }
 
-/* Interactive Features Section Styles */
+.reviews p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.reviews cite {
+    font-weight: bold;
+}
+
+/* Interactive Features Section styles */
 #interactive-features {
-    background-color: #f0f0f0;
-    padding: 50px;
-    text-align: center;
+    background-color: #f5f5f5;
+    padding: 3em;
 }
 
-#interactive-features h2 {
-    color: #333;
-}
-
-/* Team Section Styles */
+/* Team Section styles */
 #team {
     background-color: #fff;
-    padding: 50px;
-    text-align: center;
+    padding: 3em;
 }
 
 .team-member {
-    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .team-member img {
     border-radius: 50%;
     max-width: 100px;
+    margin-bottom: 10px;
 }
 
-/* Social Media Section Styles */
+/* Social Media Section styles */
 #social-media {
-    background-color: #333;
+    background-color: #3498db;
     color: #fff;
-    padding: 50px;
     text-align: center;
+    padding: 3em;
 }
 
-#social-media h2 {
-    color: #fff;
+.social-media-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .social-media-icons a {
-    font-size: 30px;
+    font-size: 2em;
     color: #fff;
-    margin: 0 10px;
+    transition: color 0.3s;
 }
 
-/* Contact Section Styles */
-#contact {
-    background-color: #f0f0f0;
-    padding: 50px;
-    text-align: center;
-}
-
-#contact h2 {
+.social-media-icons a:hover {
     color: #333;
 }
 
+/* Contact Section styles */
+#contact {
+    background-color: #f5f5f5;
+    padding: 3em;
+}
+
 #contactForm {
-    margin-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 #contactForm input,
 #contactForm textarea,
 #contactForm button {
-    margin: 10px 0;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 600px) {
-    nav {
+#contactForm button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: #333;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    ul {
         flex-direction: column;
-        align-items: flex-start;
+        position: fixed;
+        top: 70px; /* Adjust based on your header's height */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
     }
 
-    nav ul {
-        margin-top: 10px;
+    ul.active {
+        max-height: 500px; /* Adjust based on your needs */
     }
 
-    nav ul li {
-        margin: 0;
-    }
-
-    #hero,
-    #about,
-    #features,
-    #download,
-    #Reviews,
-    #interactive-features,
-    #team,
-    #social-media,
-    #contact {
-        padding: 30px;
+    li {
+        padding: 10px;
     }
 }
