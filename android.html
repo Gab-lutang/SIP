@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANZENAI Project</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style_android.css">
+    <script src="script.js" defer></script>
+    <!-- Add a link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-dfmxsVFfBRfQ3IaJstDPVbZl+M5Us+CEzpy3d/bdaz3Uofxq0d4+0oQpUpdbPl8+XF9wfu8YJFqDx+I+dvHNwA=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="ANZENAI_logo.png" alt="ANZENAI Logo">
+        <!-- Use a responsive menu icon for smaller screens -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="menu">
+            <!-- Use a class for smooth scrolling -->
+            <li><a href="#home" class="scroll-link">Home</a></li>
+            <li><a href="#about" class="scroll-link">About Us</a></li>
+            <li><a href="#features" class="scroll-link">Features</a></li>
+            <li><a href="#download" class="scroll-link">Download</a></li>
+            <li><a href="#reviews" class="scroll-link">Reviews</a></li>
+            <li><a href="#team" class="scroll-link">Team</a></li>
+            <li><a href="#social-media" class="scroll-link">Social Media</a></li>
+            <li><a href="#contact" class="scroll-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Welcome to the ANZENAI!</h1>
+        <p>Where innovation meets security!</p>
+        <p>We are a dynamic team dedicated to revolutionizing digital experiences and ensuring online safety. ANZENAI, derived from the Japanese words "anzen" (安全) meaning "safety" and "ai" (人工) meaning "artificial," encapsulates our commitment to creating cutting-edge solutions for a secure digital environment.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="animate-on-scroll">
+        <h2>About Us</h2>
+        <p>At ANZENAI, we are driven by a passion for developing advanced technologies that safeguard your online interactions. Our team comprises visionary minds and seasoned experts, each contributing their unique skills to make the digital landscape a safer place.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="animate-on-scroll">
+        <h2>Features</h2>
+        <div class="feature-card">
+            <h3>Feature 1</h3>
+            <p>Description of Feature 1.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Feature 2</h3>
+            <p>Description of Feature 2.</p>
+        </div>
+        <!-- Add more feature cards as needed -->
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="animate-on-scroll">
+        <h2>Download Our App</h2>
+        <p>Take control of your online safety by downloading the ANZENAI app. Our user-friendly interface and robust security measures make it a must-have for anyone navigating the digital realm.</p>
+        <a href="your-app-download-link" class="download-button">Download Now</a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="animate-on-scroll">
+        <h2>What Our Users Say</h2>
+        <div class="reviews">
+            <img src="user1.jpg" alt="User 1">
+            <p>"The ANZENAI Project has truly revolutionized my workflow. It's a game-changer!"</p>
+            <cite>John Doe</cite>
+        </div>
+        <div class="reviews">
+            <img src="user2.jpg" alt="User 2">
+            <p>"An amazing project with fantastic features. Highly recommended!"</p>
+            <cite>Jane Smith</cite>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </section>
+
+    <!-- Interactive Features Section -->
+    <section id="interactive-features" class="pattern-section animate-on-scroll">
+        <h2>Explore Interactive Features</h2>
+        <div class="interactive-slider">
+            <!-- Add your interactive slider content -->
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="animate-on-scroll">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="team-member1.jpg" alt="Team Member 1">
+            <p>John Doe<br>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="one_piece.jpg" alt="Team Member 2">
+            <p>Steven Gabriel T. Garcia<br>Lead Developer</p>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social-media" class="animate-on-scroll">
+        <h2>Connect with Us on Social Media</h2>
+        <div class="social-media-icons">
+            <!-- Add your social media icons and links -->
+            <!-- Example social media icon (replace the link and class with your actual icons) -->
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="animate-on-scroll">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="send_email.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+
+</html>
+
+
+    <script>
+        // JavaScript function to toggle the menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // JavaScript function for smooth scrolling
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

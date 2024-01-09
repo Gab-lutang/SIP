@@ -1,0 +1,212 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+}
+
+#hero h1 {
+    color: #333;
+}
+
+/* About Us Section Styles */
+#about {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+#about h2 {
+    color: #333;
+}
+
+/* Features Section Styles */
+#features {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Download Section Styles */
+#download {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+#download h2 {
+    color: #fff;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.download-button:hover {
+    background-color: #ddd;
+}
+
+/* Testimonials Section Styles */
+#Reviews {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.reviews {
+    margin-top: 30px;
+}
+
+.reviews img {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+/* Interactive Features Section Styles */
+#interactive-features {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+}
+
+#interactive-features h2 {
+    color: #333;
+}
+
+/* Team Section Styles */
+#team {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.team-member {
+    margin-top: 30px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+/* Social Media Section Styles */
+#social-media {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+#social-media h2 {
+    color: #fff;
+}
+
+.social-media-icons a {
+    font-size: 30px;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #333;
+}
+
+#contactForm {
+    margin-top: 20px;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    #hero,
+    #about,
+    #features,
+    #download,
+    #Reviews,
+    #interactive-features,
+    #team,
+    #social-media,
+    #contact {
+        padding: 30px;
+    }
+}
