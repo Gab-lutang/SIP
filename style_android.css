@@ -244,7 +244,7 @@ a:hover {
         top: 70px; /* Adjust based on your header's height */
         left: 0;
         width: 100%;
-        background-color: #fff;
+        background-color: #348ed8;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         max-height: 0;
         overflow: hidden;
