@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANZENAI Project</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         /* Reset some default styles */
         body, h1, h2, p, ul, li {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -22,8 +18,6 @@
             background: linear-gradient(45deg, #2c3e50, #3498db);
             color: #ffffff;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
         }
 
         /* Navigation Bar Styles */
@@ -48,22 +42,16 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         }
 
-        .menu-icon {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        ul {
+        nav ul {
             list-style: none;
             display: flex;
         }
 
-        li {
+        nav ul li {
             margin-right: 20px;
         }
 
-        a {
+        nav a {
             text-decoration: none;
             color: #ffffff;
             font-weight: bold;
@@ -71,7 +59,7 @@
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        a:hover {
+        nav a:hover {
             color: #ecf0f1;
             transform: scale(1.1);
         }
@@ -90,22 +78,21 @@
             background-color: #395a7a;
         }
 
-        /* Hero Section Styles */
-        #hero {
-            background: url('hero-background.jpg') center/cover; /* Replace with your actual image path */
+        /* Home Section Styles */
+        #home {
+            background: none;
             color: #ffffff;
             text-align: center;
-            padding: 200px 20px; /* Adjust padding as needed */
-            position: relative;
+            padding: 100px 20px;
         }
 
-        #hero h1 {
-            font-size: 4em;
+        #home h1 {
+            font-size: 3em;
             margin-bottom: 20px;
         }
 
-        #hero p {
-            font-size: 1.6em;
+        #home p {
+            font-size: 1.4em;
         }
 
         /* About Us Section Styles */
@@ -189,104 +176,96 @@
             transform: scale(1.1);
         }
 
-        /* Testimonials Section Styles */
-        #testimonials {
-            background-color: #b6adad; /* Light gray background for testimonials */
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .testimonial {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .testimonial img {
-            border-radius: 50%; /* Make images circular */
-            max-width: 100px; /* Adjust as needed */
-            margin-bottom: 10px;
-        }
-
-        /* Patterns or Textures for Sections */
-        .pattern-section {
-            background: url('pattern-background.png'); /* Replace with your actual pattern image path */
-        }
-
-        /* Interactive Features Styles */
-        #interactive-features {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        /* Team Section Styles */
-        #team.animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
-        }
-
-        #team.animate-on-scroll.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .team-member {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            max-width: 150px;
-            margin-bottom: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .team-member h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-
-        .team-member p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
         /* Contact Section Styles */
         #contact {
-            background-color: #3498db;
+            background-color: #2c3e50;
             color: #ffffff;
             text-align: center;
             padding: 80px 20px;
         }
 
-        #contact h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        #contact form {
+        /* Interactive Form Styles */
+        form {
             max-width: 600px;
             margin: 0 auto;
         }
 
-        #contact form input,
-        #contact form textarea {
+        input, textarea {
             width: 100%;
             padding: 15px;
             margin-bottom: 20px;
-            border: none;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        #contact form button {
+        button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.4em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
             background-color: #2c3e50;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            #hero {
+                padding: 150px 20px; /* Adjust padding for smaller screens */
+            }
+
+            #about,
+            #features,
+            #download,
+            #testimonials,
+            #interactive-features,
+            #team,
+            #social-media,
+            #contact {
+                padding: 60px 20px; /* Adjust padding for smaller screens */
+            }
+
+            .testimonial,
+            .team-member {
+                max-width: 100%; /* Ensure content fits within the screen width */
+            }
+        }
+
+        /* Hero Section Styles */
+        #hero {
+            background: url('hero-background.jpg') center/cover; /* Replace with your actual image path */
+            color: #ffffff;
+            text-align: center;
+            padding: 200px 20px;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            background-color: #3498db;
             color: #ffffff;
             padding: 15px 30px;
             border: none;
@@ -296,86 +275,99 @@
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
 
-        #contact form button:hover {
-            background-color: #1a252f;
+        .cta-button:hover {
+            background-color: #2c3e50;
             color: #ffffff;
             transform: scale(1.1);
         }
 
-        /* Footer Styles */
-        #footer {
+        /* Testimonials Section Styles */
+        #testimonials {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .testimonial {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial p {
+            font-size: 1.4em;
+            margin-top: 15px;
+        }
+
+        /* Interactive Features Section Styles */
+        #interactive-features {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        /* Team Section Styles */
+        #team {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .team-member {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+            max-width: 300px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            border-radius: 50%; /* Make team member images circular */
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        .team-member p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        /* Social Media Section Styles */
+        #social-media {
             background-color: #2c3e50;
             color: #ffffff;
             text-align: center;
-            padding: 20px;
+            padding: 80px 20px;
         }
 
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                background-color: #3498db;
-                text-align: center;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            #hero {
-                padding: 100px 20px;
-            }
-
-            #about {
-                padding: 60px 20px;
-            }
-
-            #features {
-                padding: 60px 20px;
-            }
-
-            .feature-card {
-                max-width: 100%;
-            }
-
-            #download {
-                padding: 60px 20px;
-            }
-
-            #testimonials {
-                padding: 60px 20px;
-            }
-
-            .testimonial {
-                max-width: 100%;
-            }
-
-            #interactive-features {
-                padding: 60px 20px;
-            }
-
-            #team {
-                padding: 60px 20px;
-            }
-
-            #contact {
-                padding: 60px 20px;
-            }
+        .social-icon {
+            font-size: 2em;
+            margin: 0 10px;
+            color: #ffffff;
+            transition: transform 0.3s ease;
         }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
     </style>
 </head>
 
@@ -383,145 +375,171 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <img src="logo.png" alt="ANZENAI Logo">
-        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+        <img src="ANZENAI_logo.png" alt="ANZENAI Logo">
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#interactive-features">Interactive Features</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" onclick="smoothScroll('#home')">Home</a></li>
+            <li><a href="#about" onclick="smoothScroll('#about')">About Us</a></li>
+            <li><a href="#features" onclick="smoothScroll('#features')">Features</a></li>
+            <li><a href="#download" onclick="smoothScroll('#download')">Download</a></li>
+            <li><a href="#testimonials" onclick="smoothScroll('#testimonials')">Testimonials</a></li>
+            <li><a href="#interactive-features" onclick="smoothScroll('#interactive-features')">Interactive Features</a></li>
+            <li><a href="#team" onclick="smoothScroll('#team')">Team</a></li>
+            <li><a href="#social-media" onclick="smoothScroll('#social-media')">Social Media</a></li>
+            <li><a href="#contact" onclick="smoothScroll('#contact')">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to ANZENAI Project</h1>
-        <p>Your journey to a secure and efficient future starts here.</p>
+    <section id="home">
+        <div id="hero">
+            <h1>Welcome to ANZENAI Project</h1>
+            <p>Your path to a secure and innovative future</p>
+            <a href="#download" class="cta-button" onclick="smoothScroll('#download')">Download Now</a>
+        </div>
     </section>
 
     <!-- About Us Section -->
     <section id="about">
         <h2>About Us</h2>
-        <p>ANZENAI Project is dedicated to providing innovative solutions for security and efficiency. We believe in
-            creating a safer and smarter world through our cutting-edge technologies.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend odio vitae gravida congue. Maecenas
+            euismod, metus vel accumsan dictum, libero libero tincidunt justo, vel bibendum elit arcu vitae lacus.
+            Aliquam ut urna vitae justo scelerisque consectetur. Suspendisse potenti. Sed vestibulum magna id nisl
+            euismod, et fermentum velit efficitur.</p>
     </section>
 
     <!-- Features Section -->
     <section id="features">
         <h2>Features</h2>
         <div class="feature-card">
-            <h3>Advanced Security</h3>
-            <p>Our platform utilizes state-of-the-art encryption and authentication methods to ensure the highest level
-                of security for your data.</p>
+            <h3>Secure Encryption</h3>
+            <p>Our advanced encryption ensures the security of your data and communication, protecting you from
+                potential threats.</p>
         </div>
         <div class="feature-card">
             <h3>User-Friendly Interface</h3>
-            <p>ANZENAI Project is designed with simplicity in mind. Enjoy a seamless experience with our intuitive
-                user interface.</p>
+            <p>Anzenai Project is designed with a user-friendly interface, making it easy for users of all levels to
+                navigate and utilize its features.</p>
         </div>
         <div class="feature-card">
-            <h3>Real-time Monitoring</h3>
-            <p>Stay informed with real-time monitoring of your security systems. Receive instant alerts and updates on
-                any potential threats.</p>
+            <h3>Real-time Updates</h3>
+            <p>Stay up-to-date with real-time updates and notifications, ensuring you never miss important information or
+                features.</p>
         </div>
     </section>
 
     <!-- Download Section -->
     <section id="download">
-        <h2>Download Our App</h2>
-        <a href="#" class="download-button">Download Now</a>
+        <h2>Download Now</h2>
+        <p>Experience the power of Anzenai Project. Download now and embark on a journey towards a secure and
+            innovative future.</p>
+        <a href="#" class="download-button">Download Anzenai Project</a>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials">
-        <h2>What Our Users Say</h2>
+        <h2>What Users Are Saying</h2>
         <div class="testimonial">
-            <img src="user1.jpg" alt="User 1">
-            <p>"ANZENAI Project has truly transformed the way I approach security. I feel confident knowing that my data
-                is in safe hands."</p>
+            <p>"Anzenai Project has truly revolutionized the way I approach online security. It's a game-changer!"</p>
             <p>- John Doe</p>
         </div>
         <div class="testimonial">
-            <img src="user2.jpg" alt="User 2">
-            <p>"The user-friendly interface and real-time monitoring features make ANZENAI Project my top choice for
-                security solutions."</p>
+            <p>"The features provided by Anzenai Project are unparalleled. I feel more secure and in control of my online presence than ever before. Highly recommended!"</p>
             <p>- Jane Smith</p>
         </div>
     </section>
-
     <!-- Interactive Features Section -->
-    <section id="interactive-features">
-        <h2>Interactive Features</h2>
+<section id="interactive-features">
+    <h2>Interactive Features</h2>
+    <div id="interactive-features-container">
         <!-- Add interactive features content here -->
-    </section>
+    </div>
+</section>
 
-    <!-- Team Section -->
-    <section id="team" class="animate-on-scroll">
-        <h2>Our Team</h2>
-        <div class="team-member">
-            <img src="team-member1.jpg" alt="Team Member 1">
-            <h3>John Doe</h3>
-            <p>Co-Founder & CEO</p>
-               </div>
-        <div class="team-member">
-            <img src="team-member2.jpg" alt="Team Member 2">
-            <h3>Jane Smith</h3>
-            <p>Chief Technology Officer</p>
-        </div>
-        <div class="team-member">
-            <img src="team-member3.jpg" alt="Team Member 3">
-            <h3>David Johnson</h3>
-            <p>Lead Developer</p>
-        </div>
-    </section>
+<!-- Team Section -->
+<section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-member">
+        <img src="team_member1.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>Founder & CEO</p>
+    </div>
+    <div class="team-member">
+        <img src="team_member2.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>Lead Developer</p>
+    </div>
+    <div class="team-member">
+        <img src="team_member3.jpg" alt="Team Member 3">
+        <h3>Bob Johnson</h3>
+        <p>UX/UI Designer</p>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<!-- Social Media Section -->
+<section id="social-media">
+    <h2>Connect With Us</h2>
+    <div class="social-icons">
+        <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</section>
 
-    <!-- Footer Section -->
-    <section id="footer">
-        <p>&copy; 2024 ANZENAI Project. All rights reserved.</p>
-    </section>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-    <!-- JavaScript for Responsive Navigation -->
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector('nav ul');
-            menu.classList.toggle('show');
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollToTopButton" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script>
+    // Smooth scrolling function
+    function smoothScroll(target) {
+        document.querySelector(target).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    // Scroll to top function
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    // Show/Hide scroll to top button based on scroll position
+    window.onscroll = function () {
+        var button = document.getElementById('scrollToTopButton');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
         }
-    </script>
-
-    <!-- JavaScript for Animation on Scroll -->
-    <script>
-        window.addEventListener('scroll', revealOnScroll);
-
-        function revealOnScroll() {
-            var reveals = document.querySelectorAll('.animate-on-scroll');
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 50;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('show');
-                }
-            }
-        }
-    </script>
-
+    };
+</script>
 </body>
-
 </html>
