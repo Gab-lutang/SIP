@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANZENAI Project</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            max-height: 60px;
+            border-radius: 50%; /* Make the logo circular */
+            margin-right: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            color: #ecf0f1;
+            transform: scale(1.1);
+        }
+
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #75bdee;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #395a7a;
+        }
+
+        /* Hero Section Styles */
+        #hero {
+            background: url('hero-background.jpg') center/cover; /* Replace with your actual image path */
+            color: #ffffff;
+            text-align: center;
+            padding: 200px 20px; /* Adjust padding as needed */
+            position: relative;
+        }
+
+        #hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.6em;
+        }
+
+        /* About Us Section Styles */
+        #about {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 80px 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        #about p {
+            font-size: 1.4em;
+            line-height: 1.6;
+        }
+
+        /* Features Section Styles */
+        #features {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1.2em;
+        }
+
+        /* Download Section Styles */
+        #download {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #download h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .download-button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.4em;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #2c3e50;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Testimonials Section Styles */
+        #testimonials {
+            background-color: #b6adad; /* Light gray background for testimonials */
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .testimonial img {
+            border-radius: 50%; /* Make images circular */
+            max-width: 100px; /* Adjust as needed */
+            margin-bottom: 10px;
+        }
+
+        /* Patterns or Textures for Sections */
+        .pattern-section {
+            background: url('pattern-background.png'); /* Replace with your actual pattern image path */
+        }
+
+        /* Interactive Features Styles */
+        #interactive-features {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #features {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.feature-card h3 {
+    font-size: 1.8em;
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1.2em;
+    color: black; /* Set the color to black for better readability */
+}
+
+        /* Team Section Styles */
+        #team.animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        #team.animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        .team-member p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #contact form button {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.4em;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        #contact form button:hover {
+            background-color: #1a252f;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Footer Styles */
+        #footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: #3498db;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            #hero {
+                padding: 100px 20px;
+            }
+
+            #about {
+                padding: 60px 20px;
+            }
+
+            #features {
+                padding: 60px 20px;
+            }
+
+            .feature-card {
+                max-width: 100%;
+            }
+
+            #download {
+                padding: 60px 20px;
+            }
+
+            #testimonials {
+                padding: 60px 20px;
+            }
+
+            .testimonial {
+                max-width: 100%;
+            }
+
+            #interactive-features {
+                padding: 60px 20px;
+            }
+
+            #team {
+                padding: 60px 20px;
+            }
+
+            #contact {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="logo.png" alt="ANZENAI Logo">
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#interactive-features">Interactive Features</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Welcome to ANZENAI Project</h1>
+        <p>Your journey to a secure and efficient future starts here.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>ANZENAI Project is dedicated to providing innovative solutions for security and efficiency. We believe in
+            creating a safer and smarter world through our cutting-edge technologies.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-card">
+            <h3>Advanced Security</h3>
+            <p>Our platform utilizes state-of-the-art encryption and authentication methods to ensure the highest level
+                of security for your data.</p>
+        </div>
+        <div class="feature-card">
+            <h3>User-Friendly Interface</h3>
+            <p>ANZENAI Project is designed with simplicity in mind. Enjoy a seamless experience with our intuitive
+                user interface.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Real-time Monitoring</h3>
+            <p>Stay informed with real-time monitoring of your security systems. Receive instant alerts and updates on
+                any potential threats.</p>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+        <h2>Download Our App</h2>
+        <a href="/media/work/HDD/IP/Compile/dist/ANZENAI.zip" download="ANZENAI.zip" class="download-button">Download Now</a>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <img src="user1.jpg" alt="User 1">
+            <p>"ANZENAI Project has truly transformed the way I approach security. I feel confident knowing that my data
+                is in safe hands."</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <img src="user2.jpg" alt="User 2">
+            <p>"The user-friendly interface and real-time monitoring features make ANZENAI Project my top choice for
+                security solutions."</p>
+            <p>- Jane Smith</p>
+        </div>
+    </section>
+
+    <!-- Interactive Features Section -->
+    <section id="interactive-features">
+        <h2>Interactive Features</h2>
+        <!-- Add interactive features content here -->
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="animate-on-scroll">
+        <h2>Our Team</h2>
+        <div class="team-member">
+            <img src="team-member1.jpg" alt="Team Member 1">
+            <h3>Steven Gabriel T. Garcia</h3>
+            <p>Developer</p>
+               </div>
+        <div class="team-member">
+            <img src="team-member2.jpg" alt="Team Member 2">
+            <h3>Levi Dan San Pedro</h3>
+            <p>Co-Member</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member3.jpg" alt="Team Member 3">
+            <h3>Yuichi Makinose</h3>
+            <p>Co-Member</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member3.jpg" alt="Team Member 3">
+            <h3>Edgardo Peralta</h3>
+            <p>Co-Member</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer">
+        <p>&copy; 2024 ANZENAI Project. All rights reserved.</p>
+    </section>
+
+    <!-- JavaScript for Responsive Navigation -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+    <!-- JavaScript for Animation on Scroll -->
+    <script>
+        window.addEventListener('scroll', revealOnScroll);
+
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.animate-on-scroll');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 50;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('show');
+                }
+            }
+        }
+    </script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
