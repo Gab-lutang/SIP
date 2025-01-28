@@ -1,574 +1,979 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANZENAI Project</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Reset some default styles */
-        body, h1, h2, p, ul, li {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #2c3e50, #3498db);
-            color: #ffffff;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation Bar Styles */
-        nav {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 1em;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav img {
-            max-height: 60px;
-            border-radius: 50%; /* Make the logo circular */
-            margin-right: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-        }
-
-        li {
-            margin-right: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        a:hover {
-            color: #ecf0f1;
-            transform: scale(1.1);
-        }
-
-        /* Scrollbar Styles */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #75bdee;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background-color: #395a7a;
-        }
-
-        /* Hero Section Styles */
-        #hero {
-            background: url('hero-background.jpg') center/cover; /* Replace with your actual image path */
-            color: #ffffff;
-            text-align: center;
-            padding: 200px 20px; /* Adjust padding as needed */
-            position: relative;
-        }
-
-        #hero h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        #hero p {
-            font-size: 1.6em;
-        }
-
-        /* About Us Section Styles */
-        #about {
-            background-color: #2c3e50;
-            color: #ffffff;
-            padding: 80px 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        #about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #3498db;
-        }
-
-        #about p {
-            font-size: 1.4em;
-            line-height: 1.6;
-        }
-
-        /* Features Section Styles */
-        #features {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .feature-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin: 20px;
-            max-width: 300px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .feature-card h3 {
-            font-size: 1.8em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            font-size: 1.2em;
-        }
-
-        /* Download Section Styles */
-        #download {
-            background-color: #2c3e50;
-            color: #ffffff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        #download h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #3498db;
-        }
-
-        .download-button {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.4em;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
-
-        .download-button:hover {
-            background-color: #2c3e50;
-            color: #ffffff;
-            transform: scale(1.1);
-        }
-
-        /* Testimonials Section Styles */
-        #testimonials {
-            background-color: #b6adad; /* Light gray background for testimonials */
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .testimonial {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .testimonial img {
-            border-radius: 50%; /* Make images circular */
-            max-width: 100px; /* Adjust as needed */
-            margin-bottom: 10px;
-        }
-
-        /* Patterns or Textures for Sections */
-        .pattern-section {
-            background: url('pattern-background.png'); /* Replace with your actual pattern image path */
-        }
-
-        /* Interactive Features Styles */
-        #interactive-features {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        #features {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.feature-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px;
-    max-width: 300px;
-    transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: scale(1.05) translateY(-10px);
-}
-
-.feature-card h3 {
-    font-size: 1.8em;
-    color: #3498db;
-    margin-bottom: 15px;
-}
-
-.feature-card p {
-    font-size: 1.2em;
-    color: black; /* Set the color to black for better readability */
-}
-
-        /* Team Section Styles */
-        #team.animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
-        }
-
-        #team.animate-on-scroll.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .team-member {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            max-width: 150px;
-            margin-bottom: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .team-member h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-
-        .team-member p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        /* Contact Section Styles */
-        #contact {
-            background-color: #3498db;
-            color: #ffffff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        #contact h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        #contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        #contact form input,
-        #contact form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        #contact form button {
-            background-color: #2c3e50;
-            color: #ffffff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.4em;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
-
-        #contact form button:hover {
-            background-color: #1a252f;
-            color: #ffffff;
-            transform: scale(1.1);
-        }
-
-        /* Footer Styles */
-        #footer {
-            background-color: #2c3e50;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                background-color: #3498db;
-                text-align: center;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            #hero {
-                padding: 100px 20px;
-            }
-
-            #about {
-                padding: 60px 20px;
-            }
-
-            #features {
-                padding: 60px 20px;
-            }
-
-            .feature-card {
-                max-width: 100%;
-            }
-
-            #download {
-                padding: 60px 20px;
-            }
-
-            #testimonials {
-                padding: 60px 20px;
-            }
-
-            .testimonial {
-                max-width: 100%;
-            }
-
-            #interactive-features {
-                padding: 60px 20px;
-            }
-
-            #team {
-                padding: 60px 20px;
-            }
-
-            #contact {
-                padding: 60px 20px;
-            }
-        }
-    </style>
+    <meta name="description" content="Next-Gen Security Suite powered by Advanced AI Technology">
+    <meta name="theme-color" content="#2563eb">
+    <title>ANZENAI Security Suite</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="style_android.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style_android.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
 
     <!-- Navigation Bar -->
-    <nav>
-        <img src="logo.png" alt="ANZENAI Logo">
-        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#interactive-features">Interactive Features</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="ANZENAI" class="logo-img">
+                <span class="logo-text">ANZENAI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#ai-features" class="nav-link">AI Security</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#download" class="btn btn-primary">Download Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to ANZENAI Project</h1>
-        <p>Your journey to a secure and efficient future starts here.</p>
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Next-Gen Security Suite</h1>
+                <p class="hero-subtitle">Powered by Advanced AI Technology</p>
+                
+                <div class="hero-features">
+                    <div class="feature-tag"><i class="fas fa-bolt"></i> Portable Software</div>
+                    <div class="feature-tag"><i class="fas fa-shield-alt"></i> No Installation</div>
+                    <div class="feature-tag"><i class="fas fa-tachometer-alt"></i> Lightweight</div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="AnzenAI.exe" class="btn btn-primary btn-lg" download data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-download"></i>
+                        Download .exe
+                    </a>
+                    <div class="version-badge" data-aos="fade-up" data-aos-delay="300">
+                        <div class="version-info">
+                            <span class="version-number">Version 1.0.1</span>
+                            <span class="version-size">6.8MB</span>
+                        </div>
+                        <div class="compatibility-info">
+                            <span><i class="fab fa-windows"></i> Windows 10/11</span>
+                            <span><i class="fas fa-shield-alt"></i> Virus Scanned</span>
+                        </div>
+                    </div>
+                    <div class="download-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>No installation required - Just download and run!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+                <div class="software-preview">
+                    <div class="preview-header">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            Ready to Protect
+                        </div>
+                    </div>
+                    <div class="preview-content">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Real-time Protection</h3>
+                                <p>Continuous monitoring and instant threat detection</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-brain"></i>
+                                <h3>AI-Powered</h3>
+                                <p>Advanced threat detection using machine learning</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-bolt"></i>
+                                <h3>Lightweight</h3>
+                                <p>Only 6.8MB, runs smoothly without slowing your system</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-laptop"></i>
+                                <h3>Portable</h3>
+                                <p>No installation needed - run directly from any drive</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-shape"></div>
+            </div>
+        </div>
+        <div class="hero-particles"></div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>ANZENAI Project is dedicated to providing innovative solutions for security and efficiency. We believe in
-            creating a safer and smarter world through our cutting-edge technologies.</p>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content" data-aos="fade-up">
+                <div class="section-header text-center">
+                    <h2 class="section-title">About ANZENAI</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtitle">Pioneering the Future of Digital Security</p>
+                </div>
+                
+                <div class="about-description" data-aos="fade-up">
+                    <div class="description-card">
+                        <p>ANZENAI is a security initiative developed by a team of grade 12 STEM students from Saint Dominic Academy of Pulilan Inc. Our mission is to revolutionize digital security through the power of artificial intelligence and innovative technology.</p>
+                        
+                        <p>The name "ANZEN" (安全), meaning "safety" or "security" in Japanese, combined with "AI" represents our commitment to creating a safer digital world through artificial intelligence.</p>
+                    </div>
+                </div>
+
+                <div class="about-pillars">
+                    <div class="pillar-item" data-aos="fade-right">
+                        <div class="pillar-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="pillar-content">
+                            <h3>Our Mission</h3>
+                            <p>To provide cutting-edge, accessible security solutions that protect users while maintaining system performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item" data-aos="fade-up">
+                        <div class="pillar-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="pillar-content">
+                            <h3>Our Vision</h3>
+                            <p>To become the leading innovator in AI-powered security solutions, making advanced protection accessible to everyone.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item" data-aos="fade-left">
+                        <div class="pillar-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="pillar-content">
+                            <h3>Our Values</h3>
+                            <p>Innovation, reliability, and user privacy form the cornerstone of our development philosophy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature-grid">
+                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Academic Excellence</h4>
+                            <p>Developed by Saint Dominic Academy of Pulilan Inc. students</p>
+                        </div>
+                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Innovation Focus</h4>
+                            <p>Cutting-edge AI technology</p>
+                        </div>
+                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Security First</h4>
+                            <p>Advanced protection systems</p>
+                        </div>
+                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Community Driven</h4>
+                            <p>Built for users, by users</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-particles"></div>
     </section>
 
     <!-- Features Section -->
-    <section id="features">
-        <h2>Features</h2>
-        <div class="feature-card">
-            <h3>Advanced Security</h3>
-            <p>Our platform utilizes state-of-the-art encryption and authentication methods to ensure the highest level
-                of security for your data.</p>
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Advanced protection that's light on your system</p>
+            </div>
+            
+            <div class="features-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <h3>Real-time Protection</h3>
+                    <p>Continuous monitoring of your system for immediate threat detection and neutralization</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Instant threat detection</li>
+                        <li><i class="fas fa-check"></i> Behavioral analysis</li>
+                        <li><i class="fas fa-check"></i> Active memory scanning</li>
+                    </ul>
+                    <div class="feature-stat">
+                        <div class="stat-value">1s</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-feather"></i>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <h3>Lightweight Design</h3>
+                    <p>Minimal system resource usage while maintaining maximum protection efficiency</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Only 6.8MB size</li>
+                        <li><i class="fas fa-check"></i> Low CPU usage</li>
+                        <li><i class="fas fa-check"></i> Quick startup time</li>
+                    </ul>
+                    <div class="feature-stat">
+                        <div class="stat-value">&lt;1%</div>
+                        <div class="stat-label">CPU Usage</div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-brain"></i>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <h3>AI-Powered Engine</h3>
+                    <p>Advanced machine learning algorithms for predictive threat detection</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Pattern recognition</li>
+                        <li><i class="fas fa-check"></i> Zero-day protection</li>
+                        <li><i class="fas fa-check"></i> Self-learning system</li>
+                    </ul>
+                    <div class="feature-stat">
+                        <div class="stat-value">95%</div>
+                        <div class="stat-label">Detection Rate</div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-bolt"></i>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <h3>Instant Deployment</h3>
+                    <p>No installation required - runs directly from any storage device</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Zero configuration</li>
+                        <li><i class="fas fa-check"></i> Portable executable</li>
+                        <li><i class="fas fa-check"></i> User update</li>
+                    </ul>
+                    <div class="feature-stat">
+                        <div class="stat-value">&lt;5s</div>
+                        <div class="stat-label">Launch Time</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>User-Friendly Interface</h3>
-            <p>ANZENAI Project is designed with simplicity in mind. Enjoy a seamless experience with our intuitive
-                user interface.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Real-time Monitoring</h3>
-            <p>Stay informed with real-time monitoring of your security systems. Receive instant alerts and updates on
-                any potential threats.</p>
+    </section>
+
+    <!-- System Requirements Section -->
+    <section id="requirements" class="requirements-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">System Requirements</h2>
+            <p class="section-subtitle">Recommended specifications for optimal performance</p>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="requirement-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Operating System</h3>
+                    <ul class="specs-list">
+                        <li><i class="fab fa-windows"></i> Windows 10/11 (64-bit)</li>
+                        <li><i class="fab fa-windows"></i> Windows 7-8.1 (64-bit)</li>
+                        <li class="recommended">Recommended: Windows 10 or newer</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="requirement-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Processor</h3>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-check"></i> 1 GHz or faster</li>
+                        <li><i class="fas fa-check"></i> x64 processor</li>
+                        <li class="recommended">Recommended: 2 GHz dual-core</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="requirement-icon">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <h3>Memory (RAM)</h3>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-check"></i> 500 MB minimum</li>
+                        <li><i class="fas fa-check"></i> 32-bit or 64-bit</li>
+                        <li class="recommended">Recommended: 2 GB or more</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="requirement-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3>Storage</h3>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-check"></i> 500 MB free space</li>
+                        <li><i class="fas fa-check"></i> SSD or HDD</li>
+                        <li class="recommended">Recommended: 1 GB free space</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requirements-note" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-info-circle"></i>
+                <p>Note: These are minimum requirements. For best performance and advanced features, we recommend exceeding these specifications.</p>
+            </div>
         </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="animate-on-scroll">
-        <h2>Download Our App</h2>
-        <a href="https://drive.google.com/file/d/126m9nUHQy_wyVmoK4Rm2ka-SB4Km7W7f/view?usp=sharing" download="ANZENAI.zip" class="download-button">Download Now</a>
-    </section>
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-card" data-aos="fade-up">
+                <div class="download-header">
+                    <h2>Download Our Security Suite</h2>
+                    <div class="version-tag">
+                        <div class="version-badge">
+                            <i class="fas fa-code-branch"></i>
+                            Latest Version v0.0.2
+                        </div>
+                        <span class="release-date">Released: January 25, 2025</span>
+                    </div>
+                </div>
 
+                <div class="download-features">
+                    <div class="feature-column">
+                        <div class="download-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Real-time Protection</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-windows"></i>
+                            <span>Windows 7-11 Compatible</span>
+                        </div>
+                    </div>
+                    <div class="feature-column">
+                        <div class="download-feature">
+                            <i class="fas fa-feather"></i>
+                            <span>Lightweight (6.8MB)</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Virus Scanned & Safe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-info">
+                    <div class="info-item">
+                        <i class="fas fa-microchip"></i>
+                        <div class="info-content">
+                            <h4>System Requirements</h4>
+                            <p>Windows 7 or later, 500MB RAM, 100MB free space</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-lock"></i>
+                        <div class="info-content">
+                            <h4>Security</h4>
+                            <p>SHA-256 Verified, Digitally Signed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-actions">
+                    <a href="downloads/security-suite.exe" class="download-button" download>
+                        <i class="fas fa-download"></i>
+                        <div class="button-content">
+                            <span class="button-text">Download Now</span>
+                            <span class="button-subtext">Free Download</span>
+                        </div>
+                    </a>
+                    <div class="download-stats">
+                        <div class="stat">
+                            <i class="fas fa-download"></i>
+                            <span>1 Download</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>N/A/5 Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sha-info">
+                    <div class="sha-header">
+                        <i class="fas fa-fingerprint"></i>
+                        <span>SHA-256 Checksum</span>
+                    </div>
+                    <code class="sha-hash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial">
-            <img src="user1.jpg" alt="User 1">
-            <p>"ANZENAI Project has truly transformed the way I approach security. I feel confident knowing that my data
-                is in safe hands."</p>
-            <p>- John Doe</p>
-        </div>
-        <div class="testimonial">
-            <img src="user2.jpg" alt="User 2">
-            <p>"The user-friendly interface and real-time monitoring features make ANZENAI Project my top choice for
-                security solutions."</p>
-            <p>- Jane Smith</p>
-        </div>
-    </section>
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What Our Users Say</h2>
+                <!-- <p class="section-subtitle">Trusted by security professionals worldwide</p> --!>
+                <div class="trust-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-check"></i>
+                        <span>N/A/5 Average Rating</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i>
+                        <span>1 Active User</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-globe"></i>
+                        <span>50+ Countries</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Interactive Features Section -->
-    <section id="interactive-features">
-        <h2>Interactive Features</h2>
-        <!-- Add interactive features content here -->
+            <!-- <div class="testimonials-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="verified-badge">
+                            <i class="fas fa-check-circle"></i>
+                            Verified User
+                        </div>
+                    </div>
+                    <blockquote>
+                        "ANZENAI has truly transformed the way I approach security. The lightweight design ensures my system stays protected without slowing down my work. The AI-powered threat detection is impressive!"
+                    </blockquote>
+                    <div class="testimonial-footer">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="user-details">
+                                <h4>John D.</h4>
+                                <p>IT Security Specialist</p>
+                                <span class="company">Fortune 500 Company</span>
+                            </div>
+                        </div>
+                        <div class="usage-info">
+                            <span class="time-using">
+                                <i class="fas fa-clock"></i>
+                                Using for 6+ months
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="verified-badge">
+                            <i class="fas fa-check-circle"></i>
+                            Verified User
+                        </div>
+                    </div>
+                    <blockquote>
+                        "The user-friendly interface and real-time monitoring features make ANZENAI my top choice for security solutions. The portable nature means I can protect any system instantly. Simple yet powerful!"
+                    </blockquote>
+                    <div class="testimonial-footer">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <div class="user-details">
+                                <h4>Jane S.</h4>
+                                <p>System Administrator</p>
+                                <span class="company">Tech Startup</span>
+                            </div>
+                        </div>
+                        <div class="usage-info">
+                            <span class="time-using">
+                                <i class="fas fa-clock"></i>
+                                Using for 1+ year
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card featured">
+                    <div class="testimonial-header">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="verified-badge">
+                            <i class="fas fa-check-circle"></i>
+                            Verified Expert
+                        </div>
+                    </div>
+                    <blockquote>
+                        "As a cybersecurity consultant, I've tested numerous security solutions. ANZENAI stands out with its innovative AI approach and minimal resource footprint. Perfect for both personal and enterprise use."
+                    </blockquote>
+                    <div class="testimonial-footer">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="user-details">
+                                <h4>Michael R.</h4>
+                                <p>Cybersecurity Consultant</p>
+                                <span class="company">Security Consulting Firm</span>
+                            </div>
+                        </div>
+                        <div class="usage-info">
+                            <span class="time-using">
+                                <i class="fas fa-clock"></i>
+                                Using for 8+ months
+                            </span>
+                            <span class="expert-badge">
+                                <i class="fas fa-award"></i>
+                                Security Expert
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </section>
 
     <!-- Team Section -->
     <section id="team" class="animate-on-scroll">
         <h2>Our Team</h2>
-        <div class="team-member">
-            <img src="team-member1.jpg" alt="Team Member 1">
-            <h3>Steven Gabriel T. Garcia</h3>
-            <p>Developer</p>
-               </div>
-        <div class="team-member">
-            <img src="team-member2.jpg" alt="Team Member 2">
-            <h3>Levi Dan San Pedro</h3>
-            <p>Co-Member</p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="steve.jpg" alt="Steven Gabriel T. Garcia">
+                <h3>Steven Gabriel T. Garcia</h3>
+                <p>Developer</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="levi.jpg" alt="Levi Dan San Pedro">
+                <h3>Levi Dan San Pedro</h3>
+                <p>Member</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="ichi.jpg" alt="Yuichi Makinose">
+                <h3>Yuichi Makinose</h3>
+                <p>Member</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="3rd.jpg" alt="Edgardo Peralta">
+                <h3>Edgardo Peralta</h3>
+                <p>Member</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="team-member">
-            <img src="team-member3.jpg" alt="Team Member 3">
-            <h3>Yuichi Makinose</h3>
-            <p>Co-Member</p>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="security-numbers">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Security by Numbers</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Our impact in protecting digital assets</p>
+            </div>
+            
+            <div class="security-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number-container">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                        <div class="stat-label">Protected Users</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number-container">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                        <div class="stat-label">Secured Devices</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number-container">
+                            <div class="stat-number" data-target="100">100</div>
+                            <div class="stat-symbol">%</div>
+                        </div>
+                        <div class="stat-label">Security Score</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="team-member">
-            <img src="team-member3.jpg" alt="Team Member 3">
-            <h3>Edgardo Peralta</h3>
-            <p>Co-Member</p>
+        <div class="stats-particles"></div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section id="ai-features" data-aos="fade-up">
+        <h2>AI-Powered Security</h2>
+        <div class="ai-features-grid">
+            <div class="ai-feature" data-aos="fade-right">
+                <div class="ai-feature-content">
+                    <h3>Real-time Threat Detection</h3>
+                    <p>Our advanced AI models continuously monitor system activity to detect and prevent security threats in real-time.</p>
+                    <ul class="feature-list">
+                        <li>Machine Learning-based anomaly detection</li>
+                        <li>Behavioral analysis</li>
+                        <li>Pattern recognition</li>
+                        <li>Predictive threat prevention</li>
+                    </ul>
+                </div>
+                <div class="ai-feature-visual">
+                    <div class="pulse-animation"></div>
+                </div>
+            </div>
+            <div class="ai-feature" data-aos="fade-left">
+                <div class="ai-feature-content">
+                    <h3>Smart System Protection</h3>
+                    <p>Intelligent system monitoring and protection using state-of-the-art AI algorithms.</p>
+                    <ul class="feature-list">
+                        <li>Automated security responses</li>
+                        <li>Self-learning capabilities</li>
+                        <li>Adaptive security measures</li>
+                        <li>24/7 AI monitoring</li>
+                    </ul>
+                </div>
+                <div class="ai-feature-visual">
+                    <div class="wave-animation"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>How does AI enhance security?</h3>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our AI system uses advanced machine learning algorithms to continuously monitor and analyze system behavior, detecting and preventing security threats in real-time. It learns from new threats and adapts its protection strategies accordingly.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>What systems are supported?</h3>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Anzenai Security Suite is compatible with Windows systems and requires Python 3.8 or higher. We're actively working on expanding support to other operating systems.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>How is my data protected?</h3>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We use AES-256 encryption for all sensitive data, including quarantined files. Our secure key management system ensures that your data remains protected at all times.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>Does it slow down my system?</h3>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No, ANZENAI is designed to be lightweight and efficient. Using only 6.8MB of storage and less than 1% CPU usage, it runs seamlessly in the background without impacting your system's performance.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>How often are updates released?</h3>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We release regular updates to enhance security features and address new threats. The AI model is continuously learning and adapting, while software updates are released monthly with critical security patches provided as needed.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <section id="contact" data-aos="fade-up">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>stevengab29@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-chat-dots"></i>
+                    <h3>Live Chat</h3>
+                    <p>Available 24/7</p>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Follow our development</p>
+                </div>
+            </div>
+            <form class="contact-form" data-aos="fade-up">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Select Topic</option>
+                        <option value="support">Technical Support</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer Section -->
-    <section id="footer">
-        <p>&copy; 2024 ANZENAI Project. All rights reserved.</p>
-    </section>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#features"><i class="fas fa-shield-alt"></i>Features</a></li>
+                    <li><a href="#download"><i class="fas fa-download"></i>Download</a></li>
+                    <li><a href="#requirements"><i class="fas fa-laptop-code"></i>System Requirements</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i>FAQ</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Team</h3>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i>About Project</a></li>
+                    <li><a href="#team"><i class="fas fa-users"></i>Team Members</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://github.com/Gab-lutang" target="_blank"><i class="fab fa-github"></i>GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://github.com/Gab-lutang" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+            
+            <p>&copy; 2025 ANZENAI Security Suite. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- JavaScript for Responsive Navigation -->
+    <!-- Required Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        function toggleMenu() {
-            var menu = document.querySelector('nav ul');
-            menu.classList.toggle('show');
-        }
-    </script>
+        // Initialize AOS
+        AOS.init();
 
-    <!-- JavaScript for Animation on Scroll -->
-    <script>
-        window.addEventListener('scroll', revealOnScroll);
-
-        function revealOnScroll() {
-            var reveals = document.querySelectorAll('.animate-on-scroll');
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 50;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('show');
+        // Animated counter function
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const counter = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = Math.round(target);
+                    clearInterval(counter);
+                } else {
+                    element.textContent = Math.round(start);
                 }
-            }
+            }, 16);
         }
-    </script>
 
-    <!-- Smooth Scroll Script -->
-    <script>
+        // Intersection Observer for stats
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statCards = entry.target.querySelectorAll('.stat-card');
+                    statCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            const numberElement = card.querySelector('.stat-number');
+                            const target = parseInt(numberElement.dataset.target);
+                            animateCounter(numberElement, target);
+                            
+                            // Animate progress bar
+                            const progressBar = card.querySelector('.progress-bar');
+                            progressBar.style.width = '100%';
+                        }, index * 200);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        // Observe stats section
+        const statsSection = document.querySelector('.security-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Enhanced Navigation Scroll Effect
+        const nav = document.querySelector('nav');
+        const menuToggle = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Smooth Scroll for Navigation Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
             });
         });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+    <!-- AOS Script -->
+    <script>
+        AOS.init();
     </script>
 
 </body>
