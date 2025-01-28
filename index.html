@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="ANZENAI_logo.png" type="image/png">
+    <link rel="icon" href="logo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Next-Gen Security Suite powered by Advanced AI Technology">
     <meta name="theme-color" content="#2563eb">
@@ -23,12 +23,27 @@
 </head>
 
 <body>
+    <!-- Logo Loading Animation -->
+    <div class="logo-loading">
+        <div class="logo-container">
+            <img src="logo.png" alt="ANZENAI Logo" class="loading-logo">
+            <div class="loading-text">ANZENAI</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <img src="logo.png" alt="ANZENAI" class="logo-img">
+                <img src="logo.png" alt="ANZENAI" class="logo-img" loading="lazy">
                 <span class="logo-text">ANZENAI</span>
             </div>
             <ul class="nav-links">
@@ -407,7 +422,7 @@
                 </div>
 
                 <div class="download-actions">
-                    <a href="downloads/AnzenAI.exe" class="download-button" download>
+                    <a href="downloads/security-suite.exe" class="download-button" download>
                         <i class="fas fa-download"></i>
                         <div class="button-content">
                             <span class="button-text">Download Now</span>
@@ -685,7 +700,7 @@
 
     <!-- AI Features Section -->
     <section id="ai-features" data-aos="fade-up">
-        <h2>AI-Powered Security</h2>
+        <h2 class="ai-powered-security">AI-Powered Security</h2>
         <div class="ai-features-grid">
             <div class="ai-feature" data-aos="fade-right">
                 <div class="ai-feature-content">
@@ -733,6 +748,7 @@
                     <p>Our AI system uses advanced machine learning algorithms to continuously monitor and analyze system behavior, detecting and preventing security threats in real-time. It learns from new threats and adapts its protection strategies accordingly.</p>
                 </div>
             </div>
+
             <div class="faq-item" data-aos="fade-up">
                 <div class="faq-question">
                     <h3>What systems are supported?</h3>
@@ -742,6 +758,7 @@
                     <p>Anzenai Security Suite is compatible with Windows systems and requires Python 3.8 or higher. We're actively working on expanding support to other operating systems.</p>
                 </div>
             </div>
+
             <div class="faq-item" data-aos="fade-up">
                 <div class="faq-question">
                     <h3>How is my data protected?</h3>
@@ -751,6 +768,7 @@
                     <p>We use AES-256 encryption for all sensitive data, including quarantined files. Our secure key management system ensures that your data remains protected at all times.</p>
                 </div>
             </div>
+
             <div class="faq-item" data-aos="fade-up">
                 <div class="faq-question">
                     <h3>Does it slow down my system?</h3>
@@ -760,6 +778,7 @@
                     <p>No, ANZENAI is designed to be lightweight and efficient. Using only 6.8MB of storage and less than 1% CPU usage, it runs seamlessly in the background without impacting your system's performance.</p>
                 </div>
             </div>
+
             <div class="faq-item" data-aos="fade-up">
                 <div class="faq-question">
                     <h3>How often are updates released?</h3>
@@ -868,115 +887,9 @@
     </footer>
 
     <!-- Required Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init();
-
-        // Animated counter function
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const counter = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = Math.round(target);
-                    clearInterval(counter);
-                } else {
-                    element.textContent = Math.round(start);
-                }
-            }, 16);
-        }
-
-        // Intersection Observer for stats
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statCards = entry.target.querySelectorAll('.stat-card');
-                    statCards.forEach((card, index) => {
-                        setTimeout(() => {
-                            const numberElement = card.querySelector('.stat-number');
-                            const target = parseInt(numberElement.dataset.target);
-                            animateCounter(numberElement, target);
-                            
-                            // Animate progress bar
-                            const progressBar = card.querySelector('.progress-bar');
-                            progressBar.style.width = '100%';
-                        }, index * 200);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-
-        // Observe stats section
-        const statsSection = document.querySelector('.security-stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Enhanced Navigation Scroll Effect
-        const nav = document.querySelector('nav');
-        const menuToggle = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Smooth Scroll for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
-
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-
-    <!-- AOS Script -->
-    <script>
-        AOS.init();
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

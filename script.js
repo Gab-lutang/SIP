@@ -1,5 +1,16 @@
 // Modern JavaScript with ES6+ features
 document.addEventListener('DOMContentLoaded', () => {
+    // Handle logo loading animation
+    const logoLoading = document.querySelector('.logo-loading');
+    
+    // Hide loading screen after content is loaded
+    setTimeout(() => {
+        logoLoading.classList.add('fade-out');
+        setTimeout(() => {
+            logoLoading.style.display = 'none';
+        }, 500);
+    }, 2500); // Adjust time as needed
+
     // Initialize AOS animations
     AOS.init({
         duration: 800,
