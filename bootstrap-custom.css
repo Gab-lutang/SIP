@@ -1,0 +1,118 @@
+/* Bootstrap Customizations */
+
+/* General Bootstrap Overrides */
+:root {
+    --bs-primary: #38bdf8;
+    --bs-primary-rgb: 56, 189, 248;
+    --bs-dark: #0f172a;
+    --bs-dark-rgb: 15, 23, 42;
+}
+
+/* Card Customizations */
+.card {
+    --bs-card-bg: rgba(255, 255, 255, 0.03);
+    --bs-card-border-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Customizations */
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: #0ea5e9;
+    --bs-btn-hover-border-color: #0ea5e9;
+    --bs-btn-active-bg: #0284c7;
+    --bs-btn-active-border-color: #0284c7;
+}
+
+/* Accordion Customizations */
+.accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: rgba(255, 255, 255, 0.05);
+    --bs-accordion-btn-bg: rgba(255, 255, 255, 0.03);
+    --bs-accordion-btn-color: var(--bs-light);
+    --bs-accordion-active-bg: rgba(56, 189, 248, 0.1);
+    --bs-accordion-active-color: var(--bs-primary);
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+/* Progress Bar Customizations */
+.progress {
+    --bs-progress-bg: rgba(255, 255, 255, 0.05);
+    --bs-progress-bar-bg: var(--bs-primary);
+    height: 0.5rem;
+}
+
+/* Modal Customizations */
+.modal-content {
+    background: var(--bs-dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-header {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.modal-footer {
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Form Controls */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--bs-light);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--bs-primary);
+    color: var(--bs-light);
+    box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+}
+
+/* Navbar Customizations */
+.navbar {
+    --bs-navbar-padding-y: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Alert Customizations */
+.alert-primary {
+    --bs-alert-bg: rgba(56, 189, 248, 0.1);
+    --bs-alert-border-color: rgba(56, 189, 248, 0.2);
+    --bs-alert-color: var(--bs-primary);
+}
+
+/* Badge Customizations */
+.badge.bg-primary {
+    background-color: rgba(56, 189, 248, 0.1) !important;
+    color: var(--bs-primary);
+}
+
+/* List Group Customizations */
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: var(--bs-light);
+}
+
+/* Table Customizations */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--bs-light);
+    --bs-table-border-color: rgba(255, 255, 255, 0.05);
+}

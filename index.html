@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="logo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Next-Gen Security Suite powered by Advanced AI Technology">
-    <meta name="theme-color" content="#2563eb">
-    <title>ANZENAI Security Suite</title>
+    <title>ANZENAI - AI-Powered Security Solution</title>
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="style_android.css" as="style">
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Stylesheets -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style_android.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Preload key assets -->
+    <link rel="preload" href="assets/hero-bg.jpg" as="image">
 </head>
-
-<body>
+<body class="bg-dark text-light">
     <!-- Logo Loading Animation -->
     <div class="logo-loading">
         <div class="logo-container">
-            <img src="logo.png" alt="ANZENAI Logo" class="loading-logo">
+            <div class="loading-logo-wrapper">
+                <img src="logo.png" alt="ANZENAI Logo" class="loading-logo">
+                <div class="logo-glow"></div>
+            </div>
             <div class="loading-text">ANZENAI</div>
+            <div class="loading-tagline">AI-Powered Security Suite</div>
             <div class="loading-progress">
                 <div class="progress-bar"></div>
             </div>
+            <div class="loading-status">Initializing Security Systems...</div>
         </div>
     </div>
 
@@ -39,697 +42,1319 @@
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">
-                <img src="logo.png" alt="ANZENAI" class="logo-img" loading="lazy">
-                <span class="logo-text">ANZENAI</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#ai-features" class="nav-link">AI Security</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#download" class="btn btn-primary">Download Now</a></li>
-            </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top border-bottom border-dark-subtle">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="ANZENAI Logo" class="me-2" width="30" height="30">
+                <span class="fw-bold text-primary">ANZEN</span><span>AI</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="#download">
+                            <i class="fas fa-download me-2"></i>Download
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="hero-title">Next-Gen Security Suite</h1>
-                <p class="hero-subtitle">Powered by Advanced AI Technology</p>
-                
-                <div class="hero-features">
-                    <div class="feature-tag"><i class="fas fa-bolt"></i> Portable Software</div>
-                    <div class="feature-tag"><i class="fas fa-shield-alt"></i> No Installation</div>
-                    <div class="feature-tag"><i class="fas fa-tachometer-alt"></i> Lightweight</div>
-                </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h1 class="hero-title display-4">Next-Gen Security Suite</h1>
+                    <p class="hero-subtitle lead">Powered by Advanced AI Technology</p>
+                    
+                    <div class="hero-features d-flex flex-wrap gap-2 mb-4">
+                        <div class="feature-tag"><i class="fas fa-bolt"></i> Portable Software</div>
+                        <div class="feature-tag"><i class="fas fa-shield-alt"></i> No Installation</div>
+                        <div class="feature-tag"><i class="fas fa-tachometer-alt"></i> Lightweight</div>
+                    </div>
 
-                <div class="hero-cta">
-                    <a href="AnzenAI.exe" class="btn btn-primary btn-lg" download data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-download"></i>
-                        Download .exe
-                    </a>
-                    <div class="version-badge" data-aos="fade-up" data-aos-delay="300">
-                        <div class="version-info">
-                            <span class="version-number">Version 1.0.1</span>
-                            <span class="version-size">6.8MB</span>
-                        </div>
-                        <div class="compatibility-info">
-                            <span><i class="fab fa-windows"></i> Windows 10/11</span>
-                            <span><i class="fas fa-shield-alt"></i> Virus Scanned</span>
-                        </div>
-                    </div>
-                    <div class="download-note">
-                        <i class="fas fa-info-circle"></i>
-                        <span>No installation required - Just download and run!</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
-                <div class="software-preview">
-                    <div class="preview-header">
-                        <div class="status-indicator">
-                            <span class="status-dot"></span>
-                            Ready to Protect
-                        </div>
-                    </div>
-                    <div class="preview-content">
-                        <div class="features-grid">
-                            <div class="feature-card">
-                                <i class="fas fa-shield-alt"></i>
-                                <h3>Real-time Protection</h3>
-                                <p>Continuous monitoring and instant threat detection</p>
+                    <div class="hero-cta">
+                        <a href="AnzenAI.exe" class="btn btn-primary btn-lg mb-3" download data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-download me-2"></i>
+                            Download .exe
+                        </a>
+                        <div class="version-badge bg-dark bg-opacity-75 p-3 rounded-3" data-aos="fade-up" data-aos-delay="300">
+                            <div class="version-info">
+                                <span class="version-number">Version 1.0.1</span>
+                                <span class="version-size">6.8MB</span>
                             </div>
-                            <div class="feature-card">
-                                <i class="fas fa-brain"></i>
-                                <h3>AI-Powered</h3>
-                                <p>Advanced threat detection using machine learning</p>
-                            </div>
-                            <div class="feature-card">
-                                <i class="fas fa-bolt"></i>
-                                <h3>Lightweight</h3>
-                                <p>Only 6.8MB, runs smoothly without slowing your system</p>
-                            </div>
-                            <div class="feature-card">
-                                <i class="fas fa-laptop"></i>
-                                <h3>Portable</h3>
-                                <p>No installation needed - run directly from any drive</p>
+                            <div class="compatibility-info">
+                                <span><i class="fab fa-windows me-1"></i> Windows 10/11</span>
+                                <span><i class="fas fa-shield-alt me-1"></i> Virus Scanned</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero-shape"></div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+                    <div class="software-preview">
+                        <div class="preview-header">
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                Ready to Protect
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-particles"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section py-5">
         <div class="container">
-            <div class="about-content" data-aos="fade-up">
-                <div class="section-header text-center">
-                    <h2 class="section-title">About ANZENAI</h2>
-                    <div class="title-underline"></div>
-                    <p class="section-subtitle">Pioneering the Future of Digital Security</p>
-                </div>
-                
-                <div class="about-description" data-aos="fade-up">
-                    <div class="description-card">
-                        <p>ANZENAI is a security initiative developed by a team of grade 12 STEM students from Saint Dominic Academy of Pulilan Inc. Our mission is to revolutionize digital security through the power of artificial intelligence and innovative technology.</p>
-                        
-                        <p>The name "ANZEN" (安全), meaning "safety" or "security" in Japanese, combined with "AI" represents our commitment to creating a safer digital world through artificial intelligence.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <div class="section-header mb-5">
+                        <h2 class="section-title display-5 mb-4">About ANZENAI</h2>
+                        <p class="lead text-secondary">Pioneering the Future of Digital Security</p>
+                    </div>
+                    
+                    <div class="about-description mb-5">
+                        <p class="text-secondary">ANZENAI is a groundbreaking security initiative developed by Grade 12 STEM students from <span class="text-primary">St. Dominic Academy of Pulilan Inc.</span> Combining innovation with academic excellence, our mission is to revolutionize digital security through artificial intelligence and cutting-edge technology.</p>
+                        <p class="text-secondary">The name "ANZEN" (安全), meaning "safety" or "security" in Japanese, combined with "AI" represents our commitment to creating a safer digital world through artificial intelligence.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="about-pillars">
-                    <div class="pillar-item" data-aos="fade-right">
-                        <div class="pillar-icon">
-                            <i class="fas fa-bullseye"></i>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="about-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="feature-icon-wrapper me-3">
+                                <i class="fas fa-school fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
+                            </div>
+                            <h3 class="h5 mb-0">Our School</h3>
                         </div>
-                        <div class="pillar-content">
-                            <h3>Our Mission</h3>
-                            <p>To provide cutting-edge, accessible security solutions that protect users while maintaining system performance.</p>
-                        </div>
-                    </div>
-
-                    <div class="pillar-item" data-aos="fade-up">
-                        <div class="pillar-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h3>Our Vision</h3>
-                            <p>To become the leading innovator in AI-powered security solutions, making advanced protection accessible to everyone.</p>
-                        </div>
-                    </div>
-
-                    <div class="pillar-item" data-aos="fade-left">
-                        <div class="pillar-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h3>Our Values</h3>
-                            <p>Innovation, reliability, and user privacy form the cornerstone of our development philosophy.</p>
+                        <p class="text-secondary mb-3">St. Dominic Academy of Pulilan Inc. - A center of academic excellence fostering innovation and technological advancement.</p>
+                        <div class="d-flex align-items-center text-primary">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <small>Pulilan, Bulacan</small>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-features">
-                    <div class="feature-grid">
-                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="feature-icon">
-                                <i class="fas fa-graduation-cap"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="feature-icon-wrapper me-3">
+                                <i class="fas fa-users fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
                             </div>
-                            <h4>Academic Excellence</h4>
-                            <p>Developed by Saint Dominic Academy of Pulilan Inc. students</p>
+                            <h3 class="h5 mb-0">Our Team</h3>
                         </div>
-                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="feature-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h4>Innovation Focus</h4>
-                            <p>Cutting-edge AI technology</p>
+                        <p class="text-secondary mb-3">A dedicated group of Grade 12 STEM students passionate about combining academic knowledge with practical innovation.</p>
+                        <div class="d-flex align-items-center text-primary">
+                            <i class="fas fa-graduation-cap me-2"></i>
+                            <small>STEM Program</small>
                         </div>
-                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="feature-icon-wrapper me-3">
+                                <i class="fas fa-lightbulb fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
                             </div>
-                            <h4>Security First</h4>
-                            <p>Advanced protection systems</p>
+                            <h3 class="h5 mb-0">Our Vision</h3>
                         </div>
-                        <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Community Driven</h4>
-                            <p>Built for users, by users</p>
+                        <p class="text-secondary mb-3">To become leaders in AI-powered security solutions while representing the innovative spirit of Filipino students.</p>
+                        <div class="d-flex align-items-center text-primary">
+                            <i class="fas fa-star me-2"></i>
+                            <small>Student Innovation</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-particles"></div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features-section">
+    <section id="features" class="features-section py-5 bg-dark bg-opacity-25">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Key Features</h2>
-                <p class="section-subtitle">Advanced protection that's light on your system</p>
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title display-5 mb-3">Key Features</h2>
+                <p class="lead text-secondary">Advanced protection that's light on your system</p>
             </div>
             
-            <div class="features-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="icon-ring"></div>
-                    </div>
-                    <h3>Real-time Protection</h3>
-                    <p>Continuous monitoring of your system for immediate threat detection and neutralization</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Instant threat detection</li>
-                        <li><i class="fas fa-check"></i> Behavioral analysis</li>
-                        <li><i class="fas fa-check"></i> Active memory scanning</li>
-                    </ul>
-                    <div class="feature-stat">
-                        <div class="stat-value">1s</div>
-                        <div class="stat-label">Response Time</div>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <i class="fas fa-feather"></i>
-                        <div class="icon-ring"></div>
-                    </div>
-                    <h3>Lightweight Design</h3>
-                    <p>Minimal system resource usage while maintaining maximum protection efficiency</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Only 6.8MB size</li>
-                        <li><i class="fas fa-check"></i> Low CPU usage</li>
-                        <li><i class="fas fa-check"></i> Quick startup time</li>
-                    </ul>
-                    <div class="feature-stat">
-                        <div class="stat-value">&lt;1%</div>
-                        <div class="stat-label">CPU Usage</div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card h-100 p-4 rounded-3 bg-dark bg-opacity-50">
+                        <div class="feature-icon-wrapper mb-4">
+                            <i class="fas fa-shield-alt fs-2 text-primary"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3 class="h5 mb-3">Real-time Protection</h3>
+                        <p class="text-secondary mb-3">Continuous monitoring of your system for immediate threat detection and neutralization</p>
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Instant threat detection</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Behavioral analysis</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Active memory scanning</li>
+                        </ul>
+                        <div class="feature-stat text-center mt-4">
+                            <div class="stat-value text-primary h4">1s</div>
+                            <div class="stat-label text-secondary">Response Time</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <i class="fas fa-brain"></i>
-                        <div class="icon-ring"></div>
-                    </div>
-                    <h3>AI-Powered Engine</h3>
-                    <p>Advanced machine learning algorithms for predictive threat detection</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Pattern recognition</li>
-                        <li><i class="fas fa-check"></i> Zero-day protection</li>
-                        <li><i class="fas fa-check"></i> Self-learning system</li>
-                    </ul>
-                    <div class="feature-stat">
-                        <div class="stat-value">95%</div>
-                        <div class="stat-label">Detection Rate</div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card h-100 p-4 rounded-3 bg-dark bg-opacity-50">
+                        <div class="feature-icon-wrapper mb-4">
+                            <i class="fas fa-feather fs-2 text-primary"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3 class="h5 mb-3">Lightweight Design</h3>
+                        <p class="text-secondary mb-3">Minimal system resource usage while maintaining maximum protection efficiency</p>
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Only 6.8MB size</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Low CPU usage</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Quick startup time</li>
+                        </ul>
+                        <div class="feature-stat text-center mt-4">
+                            <div class="stat-value text-primary h4">&lt;1%</div>
+                            <div class="stat-label text-secondary">CPU Usage</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon-wrapper">
-                        <i class="fas fa-bolt"></i>
-                        <div class="icon-ring"></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card h-100 p-4 rounded-3 bg-dark bg-opacity-50">
+                        <div class="feature-icon-wrapper mb-4">
+                            <i class="fas fa-brain fs-2 text-primary"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3 class="h5 mb-3">AI-Powered Engine</h3>
+                        <p class="text-secondary mb-3">Advanced machine learning algorithms for predictive threat detection</p>
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Pattern recognition</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Zero-day protection</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Self-learning system</li>
+                        </ul>
+                        <div class="feature-stat text-center mt-4">
+                            <div class="stat-value text-primary h4">95%</div>
+                            <div class="stat-label text-secondary">Detection Rate</div>
+                        </div>
                     </div>
-                    <h3>Instant Deployment</h3>
-                    <p>No installation required - runs directly from any storage device</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Zero configuration</li>
-                        <li><i class="fas fa-check"></i> Portable executable</li>
-                        <li><i class="fas fa-check"></i> User update</li>
-                    </ul>
-                    <div class="feature-stat">
-                        <div class="stat-value">&lt;5s</div>
-                        <div class="stat-label">Launch Time</div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card h-100 p-4 rounded-3 bg-dark bg-opacity-50">
+                        <div class="feature-icon-wrapper mb-4">
+                            <i class="fas fa-bolt fs-2 text-primary"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3 class="h5 mb-3">Instant Deployment</h3>
+                        <p class="text-secondary mb-3">No installation required - runs directly from any storage device</p>
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Zero configuration</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Portable executable</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>User update</li>
+                        </ul>
+                        <div class="feature-stat text-center mt-4">
+                            <div class="stat-value text-primary h4">&lt;9s</div>
+                            <div class="stat-label text-secondary">Launch Time</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- System Requirements Section -->
-    <section id="requirements" class="requirements-section" data-aos="fade-up">
+    <!-- AI Security Features Section -->
+    <section id="ai-features" class="ai-features-section py-5">
         <div class="container">
-            <h2 class="section-title">System Requirements</h2>
-            <p class="section-subtitle">Recommended specifications for optimal performance</p>
-            
-            <div class="requirements-grid">
-                <div class="requirement-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="requirement-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Operating System</h3>
-                    <ul class="specs-list">
-                        <li><i class="fab fa-windows"></i> Windows 10/11 (64-bit)</li>
-                        <li><i class="fab fa-windows"></i> Windows 7-8.1 (64-bit)</li>
-                        <li class="recommended">Recommended: Windows 10 or newer</li>
-                    </ul>
-                </div>
-
-                <div class="requirement-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="requirement-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Processor</h3>
-                    <ul class="specs-list">
-                        <li><i class="fas fa-check"></i> 1 GHz or faster</li>
-                        <li><i class="fas fa-check"></i> x64 processor</li>
-                        <li class="recommended">Recommended: 2 GHz dual-core</li>
-                    </ul>
-                </div>
-
-                <div class="requirement-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="requirement-icon">
-                        <i class="fas fa-memory"></i>
-                    </div>
-                    <h3>Memory (RAM)</h3>
-                    <ul class="specs-list">
-                        <li><i class="fas fa-check"></i> 500 MB minimum</li>
-                        <li><i class="fas fa-check"></i> 32-bit or 64-bit</li>
-                        <li class="recommended">Recommended: 2 GB or more</li>
-                    </ul>
-                </div>
-
-                <div class="requirement-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="requirement-icon">
-                        <i class="fas fa-hdd"></i>
-                    </div>
-                    <h3>Storage</h3>
-                    <ul class="specs-list">
-                        <li><i class="fas fa-check"></i> 500 MB free space</li>
-                        <li><i class="fas fa-check"></i> SSD or HDD</li>
-                        <li class="recommended">Recommended: 1 GB free space</li>
-                    </ul>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">AI-Powered Security</h2>
+                    <p class="lead text-secondary mb-4" data-aos="fade-up" data-aos-delay="100">
+                        Advanced protection powered by cutting-edge artificial intelligence
+                    </p>
                 </div>
             </div>
 
-            <div class="requirements-note" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-info-circle"></i>
-                <p>Note: These are minimum requirements. For best performance and advanced features, we recommend exceeding these specifications.</p>
+            <!-- AI Features Tabs -->
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <!-- Vertical tabs for larger screens -->
+                    <div class="d-none d-lg-block">
+                        <div class="nav flex-column nav-pills" role="tablist">
+                            <button class="nav-link active text-start mb-3 p-3 rounded-3" data-bs-toggle="pill" data-bs-target="#threat-detection">
+                                <i class="fas fa-shield-alt me-3"></i>
+                                <span class="d-inline-block">
+                                    <span class="d-block h6 mb-1">Threat Detection</span>
+                                    <small class="text-secondary">Real-time monitoring and analysis</small>
+                                </span>
+                            </button>
+                            <button class="nav-link text-start mb-3 p-3 rounded-3" data-bs-toggle="pill" data-bs-target="#behavior-analysis">
+                                <i class="fas fa-chart-line me-3"></i>
+                                <span class="d-inline-block">
+                                    <span class="d-block h6 mb-1">Behavior Analysis</span>
+                                    <small class="text-secondary">Pattern recognition and anomaly detection</small>
+                                </span>
+                            </button>
+                            <button class="nav-link text-start mb-3 p-3 rounded-3" data-bs-toggle="pill" data-bs-target="#auto-response">
+                                <i class="fas fa-bolt me-3"></i>
+                                <span class="d-inline-block">
+                                    <span class="d-block h6 mb-1">Auto Response</span>
+                                    <small class="text-secondary">Immediate threat neutralization</small>
+                                </span>
+                            </button>
+                            <button class="nav-link text-start p-3 rounded-3" data-bs-toggle="pill" data-bs-target="#learning-system">
+                                <i class="fas fa-brain me-3"></i>
+                                <span class="d-inline-block">
+                                    <span class="d-block h6 mb-1">Learning System</span>
+                                    <small class="text-secondary">Continuous improvement through ML</small>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Horizontal tabs for mobile -->
+                    <div class="d-lg-none mb-4">
+                        <div class="nav nav-pills flex-nowrap overflow-auto pb-2" role="tablist">
+                            <button class="nav-link active text-center me-2" data-bs-toggle="pill" data-bs-target="#threat-detection">
+                                <i class="fas fa-shield-alt d-block mb-1"></i>
+                                <small>Threat Detection</small>
+                            </button>
+                            <button class="nav-link text-center me-2" data-bs-toggle="pill" data-bs-target="#behavior-analysis">
+                                <i class="fas fa-chart-line d-block mb-1"></i>
+                                <small>Behavior Analysis</small>
+                            </button>
+                            <button class="nav-link text-center me-2" data-bs-toggle="pill" data-bs-target="#auto-response">
+                                <i class="fas fa-bolt d-block mb-1"></i>
+                                <small>Auto Response</small>
+                            </button>
+                            <button class="nav-link text-center" data-bs-toggle="pill" data-bs-target="#learning-system">
+                                <i class="fas fa-brain d-block mb-1"></i>
+                                <small>Learning System</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="tab-content">
+                        <!-- Threat Detection -->
+                        <div class="tab-pane fade show active" id="threat-detection">
+                            <div class="feature-detail card bg-dark bg-opacity-50 border-0 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature-icon-wrapper me-4">
+                                            <i class="fas fa-shield-alt fs-1 text-primary"></i>
+                                            <div class="icon-ring"></div>
+                                        </div>
+                                        <div>
+                                            <h3 class="h4 mb-1">Real-time Threat Detection</h3>
+                                            <p class="text-secondary mb-0">Continuous monitoring for instant protection</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-stats row g-4 mb-4">
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">1s</div>
+                                                <small class="text-secondary">Response Time</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">99.9%</div>
+                                                <small class="text-secondary">Accuracy Rate</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">24/7</div>
+                                                <small class="text-secondary">Monitoring</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-details">
+                                        <h4 class="h6 mb-3">Key Capabilities:</h4>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Signature-based Detection</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Heuristic Analysis</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Memory Scanning</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Process Monitoring</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-primary bg-primary bg-opacity-10 border-0">
+                                            <div class="d-flex">
+                                                <i class="fas fa-info-circle fs-5 me-3"></i>
+                                                <div>
+                                                    <h5 class="alert-heading h6 mb-1">Advanced Protection</h5>
+                                                    <p class="mb-0 small">Our AI-powered threat detection system analyzes behavior patterns and signatures in real-time, providing immediate protection against known and unknown threats.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Behavior Analysis -->
+                        <div class="tab-pane fade" id="behavior-analysis">
+                            <div class="feature-detail card bg-dark bg-opacity-50 border-0 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature-icon-wrapper me-4">
+                                            <i class="fas fa-chart-line fs-1 text-primary"></i>
+                                            <div class="icon-ring"></div>
+                                        </div>
+                                        <div>
+                                            <h3 class="h4 mb-1">Behavior Analysis</h3>
+                                            <p class="text-secondary mb-0">Smart pattern recognition system</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-stats row g-4 mb-4">
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">95%</div>
+                                                <small class="text-secondary">Detection Rate</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">0.1%</div>
+                                                <small class="text-secondary">False Positives</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">100+</div>
+                                                <small class="text-secondary">Patterns</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-details">
+                                        <h4 class="h6 mb-3">Analysis Components:</h4>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Pattern Recognition</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Anomaly Detection</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Behavioral Profiling</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Risk Assessment</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-primary bg-primary bg-opacity-10 border-0">
+                                            <div class="d-flex">
+                                                <i class="fas fa-info-circle fs-5 me-3"></i>
+                                                <div>
+                                                    <h5 class="alert-heading h6 mb-1">Smart Analysis</h5>
+                                                    <p class="mb-0 small">Our behavior analysis system learns from patterns to identify and prevent potential threats before they can cause harm.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Auto Response -->
+                        <div class="tab-pane fade" id="auto-response">
+                            <div class="feature-detail card bg-dark bg-opacity-50 border-0 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature-icon-wrapper me-4">
+                                            <i class="fas fa-bolt fs-1 text-primary"></i>
+                                            <div class="icon-ring"></div>
+                                        </div>
+                                        <div>
+                                            <h3 class="h4 mb-1">Auto Response System</h3>
+                                            <p class="text-secondary mb-0">Immediate threat neutralization</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-stats row g-4 mb-4">
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">100ms</div>
+                                                <small class="text-secondary">Response Time</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">99.8%</div>
+                                                <small class="text-secondary">Success Rate</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">10+</div>
+                                                <small class="text-secondary">Actions</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-details">
+                                        <h4 class="h6 mb-3">Response Actions:</h4>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Process Termination</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Network Isolation</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>File Quarantine</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>System Hardening</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-primary bg-primary bg-opacity-10 border-0">
+                                            <div class="d-flex">
+                                                <i class="fas fa-info-circle fs-5 me-3"></i>
+                                                <div>
+                                                    <h5 class="alert-heading h6 mb-1">Intelligent Response</h5>
+                                                    <p class="mb-0 small">Our system automatically takes appropriate action based on threat severity and type, ensuring minimal impact on system performance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Learning System -->
+                        <div class="tab-pane fade" id="learning-system">
+                            <div class="feature-detail card bg-dark bg-opacity-50 border-0 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature-icon-wrapper me-4">
+                                            <i class="fas fa-brain fs-1 text-primary"></i>
+                                            <div class="icon-ring"></div>
+                                        </div>
+                                        <div>
+                                            <h3 class="h4 mb-1">AI Learning System</h3>
+                                            <p class="text-secondary mb-0">Continuous improvement through ML</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-stats row g-4 mb-4">
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">24/7</div>
+                                                <small class="text-secondary">Learning</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">1M+</div>
+                                                <small class="text-secondary">Data Points</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="p-3 rounded-3 bg-dark bg-opacity-50 text-center">
+                                                <div class="h2 mb-1 text-primary">Daily</div>
+                                                <small class="text-secondary">Updates</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-details">
+                                        <h4 class="h6 mb-3">Learning Capabilities:</h4>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Pattern Evolution</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Threat Classification</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Behavior Adaptation</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center p-3 rounded-3 bg-dark bg-opacity-50">
+                                                    <i class="fas fa-check-circle text-primary me-3"></i>
+                                                    <span>Performance Tuning</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-primary bg-primary bg-opacity-10 border-0">
+                                            <div class="d-flex">
+                                                <i class="fas fa-info-circle fs-5 me-3"></i>
+                                                <div>
+                                                    <h5 class="alert-heading h6 mb-1">Continuous Learning</h5>
+                                                    <p class="mb-0 small">Our AI system continuously learns from new threats and attack patterns, adapting its protection strategies to stay ahead of emerging security risks.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="requirements-section py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">System Requirements</h2>
+                    <p class="lead text-secondary mb-0" data-aos="fade-up" data-aos-delay="100">
+                        Lightweight protection for your system
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Minimum Requirements -->
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="card bg-dark bg-opacity-50 border-0 h-100">
+                        <div class="card-header bg-transparent border-0 pt-4 pb-0">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="feature-icon-wrapper me-3">
+                                    <i class="fas fa-microchip text-primary fs-3"></i>
+                                    <div class="icon-ring"></div>
+                                </div>
+                                <h3 class="h5 mb-0">Minimum Requirements</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush bg-transparent">
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Processor</strong>
+                                        <span class="text-secondary">1 GHz Intel/AMD processor</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Memory</strong>
+                                        <span class="text-secondary">512 MB RAM</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Storage</strong>
+                                        <span class="text-secondary">50 MB free space</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Operating System</strong>
+                                        <span class="text-secondary">Windows 7 or later</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Requirements -->
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="card bg-dark bg-opacity-50 border-0 h-100">
+                        <div class="card-header bg-transparent border-0 pt-4 pb-0">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="feature-icon-wrapper me-3">
+                                    <i class="fas fa-rocket text-primary fs-3"></i>
+                                    <div class="icon-ring"></div>
+                                </div>
+                                <h3 class="h5 mb-0">Recommended Requirements</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush bg-transparent">
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Processor</strong>
+                                        <span class="text-secondary">2 GHz multi-core processor</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Memory</strong>
+                                        <span class="text-secondary">2 GB RAM or more</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Storage</strong>
+                                        <span class="text-secondary">100 MB free space</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent border-secondary-subtle d-flex align-items-center py-3">
+                                    <i class="fas fa-check text-primary me-3"></i>
+                                    <div>
+                                        <strong class="d-block">Operating System</strong>
+                                        <span class="text-secondary">Windows 10 or later</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Requirements -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="alert alert-primary bg-primary bg-opacity-10 border-0" role="alert">
+                        <div class="d-flex">
+                            <i class="fas fa-info-circle fs-5 me-3"></i>
+                            <div>
+                                <h5 class="alert-heading h6 mb-1">Additional Requirements</h5>
+                                <p class="mb-0 small">
+                                    Internet connection required for updates and cloud-based features.
+                                    Administrator privileges needed for installation.
+                                    Compatible with both 32-bit and 64-bit systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="download-section">
+    <section id="download" class="download-section py-5">
         <div class="container">
-            <div class="download-card" data-aos="fade-up">
-                <div class="download-header">
-                    <h2>Download Our Security Suite</h2>
-                    <div class="version-tag">
-                        <div class="version-badge">
-                            <i class="fas fa-code-branch"></i>
-                            Latest Version v0.0.2
-                        </div>
-                        <span class="release-date">Released: January 25, 2025</span>
-                    </div>
-                </div>
-
-                <div class="download-features">
-                    <div class="feature-column">
-                        <div class="download-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Real-time Protection</span>
-                        </div>
-                        <div class="download-feature">
-                            <i class="fas fa-windows"></i>
-                            <span>Windows 7-11 Compatible</span>
-                        </div>
-                    </div>
-                    <div class="feature-column">
-                        <div class="download-feature">
-                            <i class="fas fa-feather"></i>
-                            <span>Lightweight (6.8MB)</span>
-                        </div>
-                        <div class="download-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Virus Scanned & Safe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-info">
-                    <div class="info-item">
-                        <i class="fas fa-microchip"></i>
-                        <div class="info-content">
-                            <h4>System Requirements</h4>
-                            <p>Windows 7 or later, 500MB RAM, 100MB free space</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">Download Now</h2>
+                    <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">
+                        Get started with ANZENAI in minutes
+                    </p>
+                    
+                    <!-- Version Cards -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <!-- Free Version -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card bg-dark bg-opacity-50 border-0 h-100">
+                                <div class="card-body p-4 text-center">
+                                    <div class="feature-icon-wrapper mx-auto mb-4">
+                                        <i class="fas fa-shield-alt fs-2 text-primary"></i>
+                                        <div class="icon-ring"></div>
+                                    </div>
+                                    <h3 class="h5 mb-3">Community Edition</h3>
+                                    <p class="text-secondary mb-4">Essential protection for personal use</p>
+                                    <div class="version-info mb-4">
+                                        <div class="d-flex justify-content-center align-items-center mb-2">
+                                            <span class="badge bg-primary me-2">Latest</span>
+                                            <span class="text-secondary">v1.0.0</span>
+                                        </div>
+                                        <small class="text-secondary">6.8 MB</small>
+                                    </div>
+                                    <a href="#" class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#downloadModal">
+                                        <i class="fas fa-download me-2"></i>Download Free
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-lock"></i>
-                        <div class="info-content">
-                            <h4>Security</h4>
-                            <p>SHA-256 Verified, Digitally Signed</p>
+                    
+                    <!-- System Compatibility -->
+                    <div class="compatibility-info text-center mb-5" data-aos="fade-up" data-aos-delay="300">
+                        <h4 class="h6 mb-4">Compatible With</h4>
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-auto">
+                                <div class="os-badge p-2 rounded-3 bg-dark bg-opacity-50">
+                                    <i class="fab fa-windows text-primary me-2"></i>
+                                    <span>Windows 11</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="os-badge p-2 rounded-3 bg-dark bg-opacity-50">
+                                    <i class="fab fa-windows text-primary me-2"></i>
+                                    <span>Windows 10</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="os-badge p-2 rounded-3 bg-dark bg-opacity-50">
+                                    <i class="fab fa-windows text-primary me-2"></i>
+                                    <span>Windows 8.1</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="os-badge p-2 rounded-3 bg-dark bg-opacity-50">
+                                    <i class="fab fa-windows text-primary me-2"></i>
+                                    <span>Windows 7</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="download-actions">
-                    <a href="downloads/security-suite.exe" class="download-button" download>
-                        <i class="fas fa-download"></i>
-                        <div class="button-content">
-                            <span class="button-text">Download Now</span>
-                            <span class="button-subtext">Free Download</span>
-                        </div>
-                    </a>
-                    <div class="download-stats">
-                        <div class="stat">
-                            <i class="fas fa-download"></i>
-                            <span>1 Download</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-star"></i>
-                            <span>N/A/5 Rating</span>
+                    
+                    <!-- Download Instructions -->
+                    <div class="download-instructions" data-aos="fade-up" data-aos-delay="400">
+                        <div class="alert alert-primary bg-primary bg-opacity-10 border-0" role="alert">
+                            <div class="d-flex">
+                                <i class="fas fa-info-circle fs-5 me-3"></i>
+                                <div class="text-start">
+                                    <h5 class="alert-heading h6 mb-2">Installation Instructions</h5>
+                                    <ol class="mb-0 small ps-3">
+                                        <li>Download the installer</li>
+                                        <li>Run as administrator</li>
+                                        <li>Follow the setup wizard</li>
+                                        <li>Restart your system</li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="sha-info">
-                    <div class="sha-header">
-                        <i class="fas fa-fingerprint"></i>
-                        <span>SHA-256 Checksum</span>
-                    </div>
-                    <code class="sha-hash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>What Our Users Say</h2>
-                <!-- <p class="section-subtitle">Trusted by security professionals worldwide</p> --!>
-                <div class="trust-badges">
-                    <div class="badge">
-                        <i class="fas fa-shield-check"></i>
-                        <span>N/A/5 Average Rating</span>
+    <!-- Download Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Download ANZENAI</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <div class="feature-icon-wrapper mx-auto mb-3">
+                            <i class="fas fa-shield-alt fs-2 text-primary"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h4 class="h5 mb-3">ANZENAI Community Edition</h4>
+                        <p class="text-secondary mb-0">Version 1.0.0 (6.8 MB)</p>
                     </div>
-                    <div class="badge">
-                        <i class="fas fa-users"></i>
-                        <span>1 Active User</span>
+                    <div class="alert alert-primary bg-primary bg-opacity-10 border-0 mb-4">
+                        <div class="d-flex">
+                            <i class="fas fa-info-circle fs-5 me-3"></i>
+                            <div>
+                                <h6 class="alert-heading mb-1">System Check</h6>
+                                <p class="mb-0 small">We recommend running a quick system check before installation to ensure compatibility.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="badge">
-                        <i class="fas fa-globe"></i>
-                        <span>50+ Countries</span>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" onclick="startDownload()">
+                            <i class="fas fa-download me-2"></i>Start Download
+                        </button>
+                        <button class="btn btn-outline-primary" onclick="runSystemCheck()">
+                            <i class="fas fa-laptop-medical me-2"></i>Run System Check
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- <div class="testimonials-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="verified-badge">
-                            <i class="fas fa-check-circle"></i>
-                            Verified User
-                        </div>
-                    </div>
-                    <blockquote>
-                        "ANZENAI has truly transformed the way I approach security. The lightweight design ensures my system stays protected without slowing down my work. The AI-powered threat detection is impressive!"
-                    </blockquote>
-                    <div class="testimonial-footer">
-                        <div class="user-info">
-                            <div class="user-avatar">
-                                <i class="fas fa-user-shield"></i>
-                            </div>
-                            <div class="user-details">
-                                <h4>John D.</h4>
-                                <p>IT Security Specialist</p>
-                                <span class="company">Fortune 500 Company</span>
-                            </div>
-                        </div>
-                        <div class="usage-info">
-                            <span class="time-using">
-                                <i class="fas fa-clock"></i>
-                                Using for 6+ months
-                            </span>
-                        </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">User Testimonials</h2>
+                    <p class="lead text-secondary mb-0" data-aos="fade-up" data-aos-delay="100">See what our users say about ANZENAI</p>
+                </div>
+            </div>
+
+            <!-- Testimonial Stats -->
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <h3 class="h2 mb-2">4.9<span class="text-primary">/5</span></h3>
+                        <p class="text-secondary mb-0">Average Rating</p>
                     </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="verified-badge">
-                            <i class="fas fa-check-circle"></i>
-                            Verified User
-                        </div>
-                    </div>
-                    <blockquote>
-                        "The user-friendly interface and real-time monitoring features make ANZENAI my top choice for security solutions. The portable nature means I can protect any system instantly. Simple yet powerful!"
-                    </blockquote>
-                    <div class="testimonial-footer">
-                        <div class="user-info">
-                            <div class="user-avatar">
-                                <i class="fas fa-user-cog"></i>
-                            </div>
-                            <div class="user-details">
-                                <h4>Jane S.</h4>
-                                <p>System Administrator</p>
-                                <span class="company">Tech Startup</span>
-                            </div>
-                        </div>
-                        <div class="usage-info">
-                            <span class="time-using">
-                                <i class="fas fa-clock"></i>
-                                Using for 1+ year
-                            </span>
-                        </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <h3 class="h2 mb-2">98<span class="text-primary">%</span></h3>
+                        <p class="text-secondary mb-0">Satisfaction Rate</p>
                     </div>
                 </div>
-
-                <div class="testimonial-card featured">
-                    <div class="testimonial-header">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="verified-badge">
-                            <i class="fas fa-check-circle"></i>
-                            Verified Expert
-                        </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <h3 class="h2 mb-2">24<span class="text-primary">/7</span></h3>
+                        <p class="text-secondary mb-0">Support Available</p>
                     </div>
-                    <blockquote>
-                        "As a cybersecurity consultant, I've tested numerous security solutions. ANZENAI stands out with its innovative AI approach and minimal resource footprint. Perfect for both personal and enterprise use."
-                    </blockquote>
-                    <div class="testimonial-footer">
-                        <div class="user-info">
-                            <div class="user-avatar">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <div class="user-details">
-                                <h4>Michael R.</h4>
-                                <p>Cybersecurity Consultant</p>
-                                <span class="company">Security Consulting Firm</span>
-                            </div>
-                        </div>
-                        <div class="usage-info">
-                            <span class="time-using">
-                                <i class="fas fa-clock"></i>
-                                Using for 8+ months
-                            </span>
-                            <span class="expert-badge">
-                                <i class="fas fa-award"></i>
-                                Security Expert
-                            </span>
-                        </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <h3 class="h2 mb-2">100<span class="text-primary">%</span></h3>
+                        <p class="text-secondary mb-0">Success Rate</p>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="animate-on-scroll">
-        <h2 data-aos="fade-down" data-aos-duration="800">Our Team</h2>
-        <div class="team-container">
-            <div class="team-member" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <img src="steve.jpg" alt="Steven Gabriel T. Garcia">
-                <h3>Steven Gabriel T. Garcia</h3>
-                <p>Developer</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+    <section id="team" class="team-section py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">Our Team</h2>
+                    <p class="lead text-secondary mb-0" data-aos="fade-up" data-aos-delay="100">
+                        The minds behind ANZENAI
+                    </p>
                 </div>
             </div>
             
-            <div class="team-member" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <img src="levi.jpg" alt="Levi Dan San Pedro">
-                <h3>Levi Dan San Pedro</h3>
-                <p>Member</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <div class="row g-4">
+                <!-- Lead Developer -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card team-card h-100 bg-dark bg-opacity-50 border-0">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 text-center">
+                                    <div class="position-relative mb-4 mb-md-0">
+                                        <img src="steve.jpg" alt="Steven Gabriel T. Garcia" 
+                                             class="rounded-circle img-fluid border border-3 border-primary p-2" 
+                                             style="width: 200px; height: 200px; object-fit: cover;">
+                                        <span class="position-absolute bottom-0 end-0 bg-primary rounded-circle p-2">
+                                            <i class="fas fa-code text-dark fs-5"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 text-center text-md-start">
+                                    <h3 class="h4 mb-2">Steven Gabriel T. Garcia</h3>
+                                    <p class="text-primary mb-3">Lead Developer & Founder</p>
+                                    <p class="text-secondary mb-4">Full-stack developer responsible for ANZENAI's core development, architecture, and implementation of security features.</p>
+                                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle" data-bs-toggle="tooltip" title="GitHub">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle" data-bs-toggle="tooltip" title="Facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Contributors -->
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <!-- Research Contributor 1 -->
+                        <div class="col-sm-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card team-card h-100 bg-dark bg-opacity-50 border-0">
+                                <div class="card-body p-3 text-center">
+                                    <img src="levi.jpg" alt="Levi Dan San Pedro" 
+                                         class="rounded-circle img-fluid border border-2 border-secondary p-1 mb-3" 
+                                         style="width: 100px; height: 100px; object-fit: cover;">
+                                    <h3 class="h6 mb-1">Levi Dan San Pedro</h3>
+                                    <p class="small text-secondary mb-2">Research Contributor</p>
+                                    <a href="#" class="text-primary"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Contributor 2 -->
+                        <div class="col-sm-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card team-card h-100 bg-dark bg-opacity-50 border-0">
+                                <div class="card-body p-3 text-center">
+                                    <img src="ichi.jpg" alt="Yuichi Makinose" 
+                                         class="rounded-circle img-fluid border border-2 border-secondary p-1 mb-3" 
+                                         style="width: 100px; height: 100px; object-fit: cover;">
+                                    <h3 class="h6 mb-1">Yuichi Makinose</h3>
+                                    <p class="small text-secondary mb-2">Research Contributor</p>
+                                    <a href="#" class="text-primary"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Contributor 3 -->
+                        <div class="col-sm-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="card team-card h-100 bg-dark bg-opacity-50 border-0">
+                                <div class="card-body p-3 text-center">
+                                    <img src="3rd.jpg" alt="Edgardo Peralta" 
+                                         class="rounded-circle img-fluid border border-2 border-secondary p-1 mb-3" 
+                                         style="width: 100px; height: 100px; object-fit: cover;">
+                                    <h3 class="h6 mb-1">Edgardo Peralta</h3>
+                                    <p class="small text-secondary mb-2">Research Contributor</p>
+                                    <a href="#" class="text-primary"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="team-member" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                <img src="ichi.jpg" alt="Yuichi Makinose">
-                <h3>Yuichi Makinose</h3>
-                <p>Member</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+
+            <!-- Team Stats -->
+            <div class="row g-4 mt-5">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 rounded-3 bg-dark bg-opacity-50 text-center">
+                        <div class="feature-icon-wrapper mb-3">
+                            <i class="fas fa-code text-primary fs-2"></i>
+                        </div>
+                        <h4 class="h2 mb-1 text-primary">1000+</h4>
+                        <small class="text-secondary">Lines of Code</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 rounded-3 bg-dark bg-opacity-50 text-center">
+                        <div class="feature-icon-wrapper mb-3">
+                            <i class="fas fa-file-alt text-primary fs-2"></i>
+                        </div>
+                        <h4 class="h2 mb-1 text-primary">3</h4>
+                        <small class="text-secondary">Research Papers</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 rounded-3 bg-dark bg-opacity-50 text-center">
+                        <div class="feature-icon-wrapper mb-3">
+                            <i class="fas fa-clock text-primary fs-2"></i>
+                        </div>
+                        <h4 class="h2 mb-1 text-primary">500+</h4>
+                        <small class="text-secondary">Development Hours</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-4 rounded-3 bg-dark bg-opacity-50 text-center">
+                        <div class="feature-icon-wrapper mb-3">
+                            <i class="fas fa-coffee text-primary fs-2"></i>
+                        </div>
+                        <h4 class="h2 mb-1 text-primary">∞</h4>
+                        <small class="text-secondary">Coffee Cups</small>
+                    </div>
                 </div>
             </div>
-            
-            <div class="team-member" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-                <img src="3rd.jpg" alt="Edgardo Peralta">
-                <h3>Edgardo Peralta</h3>
-                <p>Member</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+
+
+            <!-- School and Team Stats -->
+            <div class="row g-4 mt-5">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <i class="fas fa-school fs-2 text-primary mb-3"></i>
+                        <h4 class="h6 mb-2">School</h4>
+                        <p class="text-secondary mb-0">SDA</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <i class="fas fa-graduation-cap fs-2 text-primary mb-3"></i>
+                        <h4 class="h6 mb-2">Program</h4>
+                        <p class="text-secondary mb-0">STEM</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <i class="fas fa-users fs-2 text-primary mb-3"></i>
+                        <h4 class="h6 mb-2">Team Size</h4>
+                        <p class="text-secondary mb-0">4 Members</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card p-4 rounded-4 bg-dark bg-opacity-50 text-center">
+                        <i class="fas fa-clock fs-2 text-primary mb-3"></i>
+                        <h4 class="h6 mb-2">Grade Level</h4>
+                        <p class="text-secondary mb-0">Grade 12</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Modal -->
+    <div class="modal fade" id="careersModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Open Positions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="job-listings">
+                        <!-- Senior Security Engineer -->
+                        <div class="job-card p-4 rounded-3 bg-dark bg-opacity-50 mb-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="mb-1">Senior Security Engineer</h5>
+                                    <p class="text-primary mb-0">Full-time · Remote</p>
+                                </div>
+                                <span class="badge bg-primary">New</span>
+                            </div>
+                            <p class="text-secondary small mb-3">
+                                Lead the development of our core security features and threat detection systems.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge bg-dark">CISSP</span>
+                                <span class="badge bg-dark">Python</span>
+                                <span class="badge bg-dark">C++</span>
+                                <span class="badge bg-dark">Machine Learning</span>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm">Apply Now</button>
+                        </div>
+
+                        <!-- AI Research Scientist -->
+                        <div class="job-card p-4 rounded-3 bg-dark bg-opacity-50 mb-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="mb-1">AI Research Scientist</h5>
+                                    <p class="text-primary mb-0">Full-time · Hybrid</p>
+                                </div>
+                            </div>
+                            <p class="text-secondary small mb-3">
+                                Research and develop next-generation AI-powered security solutions.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge bg-dark">PhD</span>
+                                <span class="badge bg-dark">Deep Learning</span>
+                                <span class="badge bg-dark">PyTorch</span>
+                                <span class="badge bg-dark">Research</span>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm">Apply Now</button>
+                        </div>
+
+                        <!-- Software Developer -->
+                        <div class="job-card p-4 rounded-3 bg-dark bg-opacity-50">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="mb-1">Software Developer</h5>
+                                    <p class="text-primary mb-0">Full-time · On-site</p>
+                                </div>
+                            </div>
+                            <p class="text-secondary small mb-3">
+                                Build and maintain our core security application and user interfaces.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge bg-dark">C++</span>
+                                <span class="badge bg-dark">Qt</span>
+                                <span class="badge bg-dark">Windows API</span>
+                                <span class="badge bg-dark">Security</span>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title display-5 mb-3" data-aos="fade-up">Get in Touch</h2>
+                    <p class="lead text-secondary">Have questions? We're here to help!</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="contact-info p-4 rounded-3 bg-dark bg-opacity-50">
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Contact Information</h3>
+                            <p class="text-secondary mb-0">Feel free to reach out to us through any of these channels</p>
+                        </div>
+                        
+                        <div class="contact-items">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-envelope fs-5 text-primary me-3"></i>
+                                <div>
+                                    <h4 class="h6 mb-1">Email</h4>
+                                    <p class="text-secondary mb-0">stevengab29@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map-marker-alt fs-5 text-primary me-3"></i>
+                                <div>
+                                    <h4 class="h6 mb-1">Location</h4>
+                                    <p class="text-secondary mb-0">St. Dominic Academy of Pulilan Inc.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-clock fs-5 text-primary me-3"></i>
+                                <div>
+                                    <h4 class="h6 mb-1">Support Hours</h4>
+                                    <p class="text-secondary mb-0">Monday - Friday, 9:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="contact-form p-4 rounded-3 bg-dark bg-opacity-50">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label text-secondary">Name</label>
+                                <input type="text" class="form-control bg-dark border-0 text-light" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-secondary">Email</label>
+                                <input type="email" class="form-control bg-dark border-0 text-light" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label text-secondary">Message</label>
+                                <textarea class="form-control bg-dark border-0 text-light" id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Statistics Section -->
-    <section class="security-numbers">
+    <section class="security-numbers py-5 bg-dark bg-opacity-25">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <h2>Security by Numbers</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Our impact in protecting digital assets</p>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-3" data-aos="fade-up">Security by Numbers</h2>
+                    <p class="lead text-secondary mb-4" data-aos="fade-up" data-aos-delay="100">Real-time protection statistics</p>
+                </div>
             </div>
             
-            <div class="security-stats" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-number-container">
-                            <div class="stat-number" data-target="0">0</div>
-                            <div class="stat-plus">+</div>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 text-center border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-shield-alt fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
+                            </div>
                         </div>
-                        <div class="stat-label">Protected Users</div>
-                        <div class="stat-progress">
-                            <div class="progress-bar"></div>
-                        </div>
+                        <h3 class="h2 mb-2">99.9<span class="text-primary">%</span></h3>
+                        <p class="text-secondary mb-0">Detection Rate</p>
+                        <small class="text-secondary opacity-75">Based on test environment</small>
                     </div>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-number-container">
-                            <div class="stat-number" data-target="0">0</div>
-                            <div class="stat-plus">+</div>
-                        </div>
-                        <div class="stat-label">Secured Devices</div>
-                        <div class="stat-progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-number-container">
-                            <div class="stat-number" data-target="100">100</div>
-                            <div class="stat-symbol">%</div>
-                        </div>
-                        <div class="stat-label">Security Score</div>
-                        <div class="stat-progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="stats-particles"></div>
-    </section>
 
-    <!-- AI Features Section -->
-    <section id="ai-features" data-aos="fade-up">
-        <h2 class="ai-powered-security">AI-Powered Security</h2>
-        <div class="ai-features-grid">
-            <div class="ai-feature" data-aos="fade-right">
-                <div class="ai-feature-content">
-                    <h3>Real-time Threat Detection</h3>
-                    <p>Our advanced AI models continuously monitor system activity to detect and prevent security threats in real-time.</p>
-                    <ul class="feature-list">
-                        <li>Machine Learning-based anomaly detection</li>
-                        <li>Behavioral analysis</li>
-                        <li>Pattern recognition</li>
-                        <li>Predictive threat prevention</li>
-                    </ul>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 text-center border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-tachometer-alt fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="h2 mb-2">&lt;1<span class="text-primary">%</span></h3>
+                        <p class="text-secondary mb-0">CPU Usage</p>
+                        <small class="text-secondary opacity-75">Average system impact</small>
+                    </div>
                 </div>
-                <div class="ai-feature-visual">
-                    <div class="pulse-animation"></div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 text-center border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-bolt fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="h2 mb-2">6.8<span class="text-primary">MB</span></h3>
+                        <p class="text-secondary mb-0">File Size</p>
+                        <small class="text-secondary opacity-75">Lightweight protection</small>
+                    </div>
                 </div>
-            </div>
-            <div class="ai-feature" data-aos="fade-left">
-                <div class="ai-feature-content">
-                    <h3>Smart System Protection</h3>
-                    <p>Intelligent system monitoring and protection using state-of-the-art AI algorithms.</p>
-                    <ul class="feature-list">
-                        <li>Automated security responses</li>
-                        <li>Self-learning capabilities</li>
-                        <li>Adaptive security measures</li>
-                        <li>24/7 AI monitoring</li>
-                    </ul>
-                </div>
-                <div class="ai-feature-visual">
-                    <div class="wave-animation"></div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card h-100 p-4 rounded-4 bg-dark bg-opacity-50 text-center border border-primary border-opacity-25">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-clock fs-2 text-primary"></i>
+                                <div class="icon-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="h2 mb-2">24/7</h3>
+                        <p class="text-secondary mb-0">Protection</p>
+                        <small class="text-secondary opacity-75">Real-time monitoring</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -791,51 +1416,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" data-aos="fade-up">
-        <h2>Get in Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="bi bi-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>stevengab29@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="bi bi-chat-dots"></i>
-                    <h3>Live Chat</h3>
-                    <p>Available 24/7</p>
-                </div>
-                <div class="contact-item">
-                    <i class="bi bi-github"></i>
-                    <h3>GitHub</h3>
-                    <p>Follow our development</p>
-                </div>
-            </div>
-            <form class="contact-form" data-aos="fade-up">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <select>
-                        <option value="">Select Topic</option>
-                        <option value="support">Technical Support</option>
-                        <option value="feature">Feature Request</option>
-                        <option value="bug">Bug Report</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Footer Section -->
     <footer id="footer">
         <div class="footer-content">
@@ -886,10 +1466,28 @@
         </div>
     </footer>
 
-    <!-- Required Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
     <script src="script.js"></script>
-</body>
-
-</html>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Enable Bootstrap tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        
+        // Enable Bootstrap popovers
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    </script>
